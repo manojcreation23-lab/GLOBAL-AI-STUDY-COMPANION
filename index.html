@@ -4,838 +4,816 @@
 
 <head>
 
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
-    <title>Manoj | Portfolio</title>
+<title>Manoj | Portfolio</title>
 
-    <style>
 
-        /* =========================
-           BASIC
-        ========================= */
+<style>
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+/* =========================
+   RESET
+========================= */
 
-        html {
-            scroll-behavior: smooth;
-        }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        body {
 
-            font-family:
-                -apple-system,
-                BlinkMacSystemFont,
-                "Segoe UI",
-                Arial,
-                sans-serif;
+body {
 
-            background: #f7f9fc;
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Arial,
+        sans-serif;
 
-            color: #172033;
+    background: #f7f9fc;
 
-            min-height: 100vh;
-        }
+    color: #172033;
 
+    min-height: 100vh;
+}
 
-        /* =========================
-           NAVBAR
-        ========================= */
 
-        header {
+/* =========================
+   HEADER
+========================= */
 
-            position: fixed;
+header {
 
-            top: 0;
-            left: 0;
+    position: fixed;
 
-            width: 100%;
+    top: 0;
+    left: 0;
 
-            height: 72px;
+    width: 100%;
 
-            background: rgba(255,255,255,0.95);
+    height: 72px;
 
-            backdrop-filter: blur(12px);
+    background: rgba(255,255,255,0.96);
 
-            border-bottom: 1px solid #e7eaf0;
+    backdrop-filter: blur(12px);
 
-            display: flex;
+    border-bottom: 1px solid #e5e7eb;
 
-            align-items: center;
+    display: flex;
 
-            justify-content: space-between;
+    align-items: center;
 
-            padding: 0 7%;
+    justify-content: space-between;
 
-            z-index: 1000;
-        }
+    padding: 0 7%;
 
+    z-index: 1000;
+}
 
-        .logo {
 
-            font-size: 23px;
+.logo {
 
-            font-weight: 700;
+    font-size: 24px;
 
-            color: #111827;
+    font-weight: 700;
 
-            cursor: pointer;
-        }
+    color: #111827;
 
+    cursor: pointer;
+}
 
-        .logo span {
 
-            color: #2563eb;
-        }
+.logo span {
 
+    color: #2563eb;
+}
 
-        nav {
 
-            display: flex;
+/* =========================
+   NAVIGATION
+========================= */
 
-            gap: 8px;
-        }
+nav {
 
+    display: flex;
 
-        nav button {
+    gap: 8px;
+}
 
-            border: none;
 
-            background: transparent;
+nav button {
 
-            padding: 10px 15px;
+    border: none;
 
-            border-radius: 8px;
+    background: transparent;
 
-            font-size: 14px;
+    padding: 10px 15px;
 
-            color: #4b5563;
+    border-radius: 8px;
 
-            cursor: pointer;
+    color: #4b5563;
 
-            transition: 0.25s;
-        }
+    font-size: 14px;
 
+    cursor: pointer;
 
-        nav button:hover {
+    transition: 0.25s;
+}
 
-            background: #eef4ff;
 
-            color: #2563eb;
-        }
+nav button:hover {
 
+    background: #eef4ff;
 
-        nav button.active {
+    color: #2563eb;
+}
 
-            background: #2563eb;
 
-            color: white;
-        }
+nav button.active {
 
+    background: #2563eb;
 
-        /* =========================
-           MAIN
-        ========================= */
+    color: white;
+}
 
-        main {
 
-            padding-top: 72px;
+/* =========================
+   MAIN
+========================= */
 
-            min-height: 100vh;
-        }
+main {
 
+    padding-top: 72px;
 
-        .page {
+    min-height: calc(100vh - 72px);
+}
 
-            display: none;
 
-            min-height: calc(100vh - 72px);
+.page {
 
-            padding: 70px 8%;
-        }
+    display: none;
 
+    min-height: calc(100vh - 72px);
 
-        .page.active {
+    padding: 70px 8%;
+}
 
-            display: block;
-        }
 
+.page.active {
 
-        /* =========================
-           HOME
-        ========================= */
+    display: block;
+}
 
-        #home {
 
-            display: none;
+/* =========================
+   HOME
+========================= */
 
-            align-items: center;
+#home {
 
-            justify-content: center;
+    align-items: center;
 
-            text-align: center;
+    justify-content: center;
 
-            background:
+    text-align: center;
 
-                radial-gradient(
-                    circle at 20% 20%,
-                    #eaf2ff,
-                    transparent 35%
-                ),
+    background:
 
-                radial-gradient(
-                    circle at 80% 80%,
-                    #eef7ff,
-                    transparent 35%
-                ),
+        radial-gradient(
+            circle at 20% 20%,
+            #eaf2ff,
+            transparent 35%
+        ),
 
-                #ffffff;
-        }
+        radial-gradient(
+            circle at 80% 80%,
+            #eef7ff,
+            transparent 35%
+        ),
 
+        #ffffff;
+}
 
-        #home.active {
 
-            display: flex;
-        }
+#home.active {
 
+    display: flex;
+}
 
-        .hero {
 
-            max-width: 850px;
-        }
+.hero {
 
+    max-width: 850px;
+}
 
-        .small-title {
 
-            color: #2563eb;
+.small-title {
 
-            font-weight: 600;
+    color: #2563eb;
 
-            font-size: 15px;
+    font-size: 14px;
 
-            letter-spacing: 1px;
+    font-weight: 700;
 
-            margin-bottom: 18px;
-        }
+    letter-spacing: 1.5px;
 
+    margin-bottom: 18px;
+}
 
-        .hero h1 {
 
-            font-size: clamp(42px, 7vw, 75px);
+.hero h1 {
 
-            line-height: 1.05;
+    font-size: clamp(44px, 7vw, 75px);
 
-            letter-spacing: -2px;
+    line-height: 1.05;
 
-            color: #111827;
+    letter-spacing: -2px;
 
-            margin-bottom: 22px;
-        }
+    color: #111827;
 
+    margin-bottom: 22px;
+}
 
-        .hero h1 span {
 
-            color: #2563eb;
-        }
+.hero h1 span {
 
+    color: #2563eb;
+}
 
-        .hero p {
 
-            max-width: 680px;
+.hero p {
 
-            margin: auto;
+    max-width: 680px;
 
-            color: #667085;
+    margin: auto;
 
-            font-size: 18px;
+    color: #667085;
 
-            line-height: 1.8;
-        }
+    font-size: 18px;
 
+    line-height: 1.8;
+}
 
-        .hero-buttons {
 
-            margin-top: 35px;
+/* =========================
+   HOME BUTTONS
+========================= */
 
-            display: flex;
+.hero-buttons {
 
-            justify-content: center;
+    margin-top: 35px;
 
-            gap: 12px;
+    display: flex;
 
-            flex-wrap: wrap;
-        }
+    justify-content: center;
 
+    gap: 12px;
 
-        .primary-btn {
+    flex-wrap: wrap;
+}
 
-            border: none;
 
-            background: #2563eb;
+.primary-btn {
 
-            color: white;
+    border: none;
 
-            padding: 13px 23px;
+    background: #2563eb;
 
-            border-radius: 9px;
+    color: white;
 
-            font-weight: 600;
+    padding: 13px 23px;
 
-            cursor: pointer;
+    border-radius: 9px;
 
-            transition: 0.25s;
-        }
+    font-weight: 600;
 
+    cursor: pointer;
 
-        .primary-btn:hover {
+    transition: 0.25s;
+}
 
-            background: #1d4ed8;
 
-            transform: translateY(-2px);
-        }
+.primary-btn:hover {
 
+    background: #1d4ed8;
 
-        .secondary-btn {
+    transform: translateY(-2px);
+}
 
-            border: 1px solid #d9dee8;
 
-            background: white;
+.secondary-btn {
 
-            color: #344054;
+    border: 1px solid #d9dee8;
 
-            padding: 13px 23px;
+    background: white;
 
-            border-radius: 9px;
+    color: #344054;
 
-            font-weight: 600;
+    padding: 13px 23px;
 
-            cursor: pointer;
+    border-radius: 9px;
 
-            transition: 0.25s;
-        }
+    font-weight: 600;
 
+    cursor: pointer;
 
-        .secondary-btn:hover {
+    transition: 0.25s;
+}
 
-            border-color: #2563eb;
 
-            color: #2563eb;
-        }
+.secondary-btn:hover {
 
+    border-color: #2563eb;
 
-        /* =========================
-           PAGE HEADER
-        ========================= */
+    color: #2563eb;
+}
 
-        .page-header {
 
-            max-width: 800px;
+/* =========================
+   PAGE HEADER
+========================= */
 
-            margin: 0 auto 45px;
+.page-header {
 
-            text-align: center;
-        }
+    text-align: center;
 
+    max-width: 800px;
 
-        .page-header h2 {
+    margin: 0 auto 45px;
+}
 
-            font-size: 40px;
 
-            color: #111827;
+.page-header h2 {
 
-            margin-bottom: 12px;
-        }
+    font-size: 40px;
 
+    color: #111827;
 
-        .page-header p {
+    margin-bottom: 12px;
+}
 
-            color: #667085;
 
-            font-size: 16px;
-        }
+.page-header p {
 
+    color: #667085;
+}
 
-        /* =========================
-           ABOUT
-        ========================= */
 
-        .about-box {
+/* =========================
+   ABOUT
+========================= */
 
-            max-width: 850px;
+.about-box {
 
-            margin: auto;
+    max-width: 850px;
 
-            background: white;
+    margin: auto;
 
-            border: 1px solid #e5e7eb;
+    background: white;
 
-            border-radius: 16px;
+    border: 1px solid #e5e7eb;
 
-            padding: 35px;
+    border-radius: 16px;
 
-            box-shadow:
-                0 10px 30px rgba(16,24,40,0.05);
-        }
+    padding: 35px;
 
+    box-shadow:
+        0 10px 30px rgba(16,24,40,0.05);
+}
 
-        .about-box p {
 
-            color: #667085;
+.about-box p {
 
-            line-height: 1.8;
+    color: #667085;
 
-            margin-bottom: 18px;
-        }
+    line-height: 1.8;
 
+    margin-bottom: 18px;
+}
 
-        .about-box p:last-child {
 
-            margin-bottom: 0;
-        }
+.about-box p:last-child {
 
+    margin-bottom: 0;
+}
 
-        /* =========================
-           PROJECTS
-        ========================= */
 
-        .projects-grid {
+/* =========================
+   MY WORK
+========================= */
 
-            max-width: 1050px;
+.work-grid {
 
-            margin: auto;
+    max-width: 1000px;
 
-            display: grid;
+    margin: auto;
 
-            grid-template-columns:
-                repeat(auto-fit, minmax(260px, 1fr));
+    display: grid;
 
-            gap: 22px;
-        }
+    grid-template-columns:
+        repeat(auto-fit, minmax(280px, 1fr));
 
+    gap: 25px;
+}
 
-        .project-card {
 
-            background: white;
+.work-card {
 
-            border: 1px solid #e5e7eb;
+    background: white;
 
-            border-radius: 15px;
+    border: 1px solid #e5e7eb;
 
-            padding: 28px;
+    border-radius: 16px;
 
-            transition: 0.3s;
+    padding: 30px;
 
-            box-shadow:
-                0 8px 25px rgba(16,24,40,0.04);
-        }
+    transition: 0.3s;
 
+    box-shadow:
+        0 10px 30px rgba(16,24,40,0.05);
+}
 
-        .project-card:hover {
 
-            transform: translateY(-5px);
+.work-card:hover {
 
-            border-color: #b8cdfa;
+    transform: translateY(-5px);
 
-            box-shadow:
-                0 15px 35px rgba(37,99,235,0.10);
-        }
+    border-color: #b8cdfa;
 
+    box-shadow:
+        0 15px 35px rgba(37,99,235,0.10);
+}
 
-        .project-icon {
 
-            width: 45px;
+.work-icon {
 
-            height: 45px;
+    width: 50px;
 
-            display: flex;
+    height: 50px;
 
-            align-items: center;
+    display: flex;
 
-            justify-content: center;
+    align-items: center;
 
-            background: #eef4ff;
+    justify-content: center;
 
-            border-radius: 10px;
+    background: #eef4ff;
 
-            font-size: 21px;
+    border-radius: 12px;
 
-            margin-bottom: 18px;
-        }
+    font-size: 24px;
 
+    margin-bottom: 18px;
+}
 
-        .project-card h3 {
 
-            color: #111827;
+.work-card h3 {
 
-            margin-bottom: 10px;
+    color: #111827;
 
-            font-size: 20px;
-        }
+    margin-bottom: 10px;
+}
 
 
-        .project-card p {
+.work-card p {
 
-            color: #667085;
+    color: #667085;
 
-            line-height: 1.7;
+    line-height: 1.7;
 
-            font-size: 15px;
-        }
+    margin-bottom: 20px;
+}
 
 
-        /* =========================
-           CALCULATOR
-        ========================= */
+/* =========================
+   CALCULATOR
+========================= */
 
-        .calculator {
+.calculator {
 
-            max-width: 390px;
+    max-width: 390px;
 
-            margin: auto;
+    margin: auto;
 
-            background: white;
+    background: white;
 
-            padding: 22px;
+    padding: 22px;
 
-            border-radius: 18px;
+    border-radius: 18px;
 
-            border: 1px solid #e5e7eb;
+    border: 1px solid #e5e7eb;
 
-            box-shadow:
-                0 15px 40px rgba(16,24,40,0.08);
-        }
+    box-shadow:
+        0 15px 40px rgba(16,24,40,0.08);
+}
 
 
-        #display {
+#display {
 
-            width: 100%;
+    width: 100%;
 
-            height: 70px;
+    height: 70px;
 
-            border: 1px solid #e5e7eb;
+    border: 1px solid #e5e7eb;
 
-            background: #f8fafc;
+    background: #f8fafc;
 
-            border-radius: 10px;
+    border-radius: 10px;
 
-            margin-bottom: 15px;
+    margin-bottom: 15px;
 
-            padding: 12px;
+    padding: 12px;
 
-            text-align: right;
+    text-align: right;
 
-            font-size: 27px;
+    font-size: 27px;
 
-            color: #111827;
+    color: #111827;
 
-            outline: none;
-        }
+    outline: none;
+}
 
 
-        .calculator-buttons {
+.calculator-buttons {
 
-            display: grid;
+    display: grid;
 
-            grid-template-columns:
-                repeat(4, 1fr);
+    grid-template-columns:
+        repeat(4, 1fr);
 
-            gap: 9px;
-        }
+    gap: 9px;
+}
 
 
-        .calculator-buttons button {
+.calculator-buttons button {
 
-            height: 58px;
+    height: 58px;
 
-            border: none;
+    border: none;
 
-            border-radius: 10px;
+    border-radius: 10px;
 
-            background: #f1f4f8;
+    background: #f1f4f8;
 
-            color: #1f2937;
+    color: #1f2937;
 
-            font-size: 18px;
+    font-size: 18px;
 
-            cursor: pointer;
+    cursor: pointer;
 
-            transition: 0.2s;
-        }
+    transition: 0.2s;
+}
 
 
-        .calculator-buttons button:hover {
+.calculator-buttons button:hover {
 
-            background: #e5eaf1;
-        }
+    background: #e5eaf1;
+}
 
 
-        .calculator-buttons .operator {
+.operator {
 
-            color: #2563eb;
+    color: #2563eb !important;
 
-            background: #eef4ff;
-        }
+    background: #eef4ff !important;
+}
 
 
-        .calculator-buttons .equals {
+.equals {
 
-            background: #2563eb;
+    background: #2563eb !important;
 
-            color: white;
-        }
+    color: white !important;
+}
 
 
-        .calculator-buttons .clear {
+.clear {
 
-            color: #dc2626;
+    color: #dc2626 !important;
 
-            background: #fff1f2;
-        }
+    background: #fff1f2 !important;
+}
 
 
-        /* =========================
-           ACHIEVEMENTS
-        ========================= */
+/* =========================
+   ACHIEVEMENTS
+========================= */
 
-        .achievements-grid {
+.achievements-grid {
 
-            max-width: 1100px;
+    max-width: 1100px;
 
-            margin: auto;
+    margin: auto;
 
-            display: grid;
+    display: grid;
 
-            grid-template-columns:
-                repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns:
+        repeat(auto-fit, minmax(280px, 1fr));
 
-            gap: 24px;
-        }
+    gap: 24px;
+}
 
 
-        .certificate-card {
+.certificate-card {
 
-            background: white;
+    background: white;
 
-            border: 1px solid #e5e7eb;
+    border: 1px solid #e5e7eb;
 
-            border-radius: 16px;
+    border-radius: 16px;
 
-            padding: 14px;
+    padding: 14px;
 
-            box-shadow:
-                0 10px 30px rgba(16,24,40,0.05);
+    box-shadow:
+        0 10px 30px rgba(16,24,40,0.05);
 
-            transition: 0.3s;
-        }
+    transition: 0.3s;
+}
 
 
-        .certificate-card:hover {
+.certificate-card:hover {
 
-            transform: translateY(-5px);
+    transform: translateY(-5px);
 
-            border-color: #b8cdfa;
+    border-color: #b8cdfa;
+}
 
-            box-shadow:
-                0 15px 35px rgba(37,99,235,0.10);
-        }
 
+.certificate-card img {
 
-        .certificate-card img {
+    width: 100%;
 
-            width: 100%;
+    height: 250px;
 
-            height: 250px;
+    object-fit: contain;
 
-            object-fit: contain;
+    background: #f8fafc;
 
-            background: #f8fafc;
+    border-radius: 10px;
 
-            border-radius: 10px;
+    cursor: pointer;
+}
 
-            cursor: pointer;
-        }
 
+.certificate-info {
 
-        .certificate-info {
+    padding: 16px 5px 5px;
+}
 
-            padding: 16px 5px 5px;
-        }
 
+.certificate-info h3 {
 
-        .certificate-info h3 {
+    font-size: 17px;
 
-            font-size: 17px;
+    color: #111827;
 
-            color: #111827;
+    margin-bottom: 5px;
+}
 
-            margin-bottom: 5px;
-        }
 
+.certificate-info p {
 
-        .certificate-info p {
+    color: #667085;
 
-            color: #667085;
+    font-size: 14px;
+}
 
-            font-size: 14px;
-        }
 
+/* =========================
+   IMAGE POPUP
+========================= */
 
-        /* =========================
-           IMAGE MODAL
-        ========================= */
+.modal {
 
-        .modal {
+    display: none;
 
-            display: none;
+    position: fixed;
 
-            position: fixed;
+    inset: 0;
 
-            inset: 0;
+    background: rgba(15,23,42,0.88);
 
-            background: rgba(15,23,42,0.88);
+    z-index: 3000;
 
-            z-index: 3000;
+    align-items: center;
 
-            align-items: center;
+    justify-content: center;
 
-            justify-content: center;
+    padding: 25px;
+}
 
-            padding: 25px;
-        }
 
+.modal.show {
 
-        .modal.show {
+    display: flex;
+}
 
-            display: flex;
-        }
 
+.modal img {
 
-        .modal img {
+    max-width: 95%;
 
-            max-width: 95%;
+    max-height: 90vh;
 
-            max-height: 90vh;
+    background: white;
 
-            background: white;
+    border-radius: 8px;
+}
 
-            border-radius: 8px;
-        }
 
+.close-modal {
 
-        .close-modal {
+    position: absolute;
 
-            position: absolute;
+    top: 20px;
 
-            top: 20px;
+    right: 30px;
 
-            right: 30px;
+    font-size: 38px;
 
-            font-size: 38px;
+    color: white;
 
-            color: white;
+    cursor: pointer;
+}
 
-            cursor: pointer;
 
-            line-height: 1;
-        }
+/* =========================
+   FOOTER
+========================= */
 
+footer {
 
-        /* =========================
-           FOOTER
-        ========================= */
+    text-align: center;
 
-        footer {
+    padding: 22px;
 
-            text-align: center;
+    border-top: 1px solid #e5e7eb;
 
-            padding: 22px;
+    color: #98a2b3;
 
-            border-top: 1px solid #e5e7eb;
+    background: white;
 
-            color: #98a2b3;
+    font-size: 14px;
+}
 
-            background: white;
 
-            font-size: 14px;
-        }
+/* =========================
+   MOBILE
+========================= */
 
+@media (max-width: 700px) {
 
-        /* =========================
-           MOBILE
-        ========================= */
+    header {
 
-        @media (max-width: 700px) {
+        height: auto;
 
-            header {
+        min-height: 70px;
 
-                height: auto;
+        padding: 12px 5%;
 
-                min-height: 70px;
+        flex-direction: column;
 
-                padding: 12px 5%;
+        gap: 8px;
+    }
 
-                flex-direction: column;
 
-                gap: 8px;
-            }
+    nav {
 
+        flex-wrap: wrap;
 
-            nav {
+        justify-content: center;
+    }
 
-                flex-wrap: wrap;
 
-                justify-content: center;
-            }
+    nav button {
 
+        padding: 8px 10px;
 
-            nav button {
+        font-size: 13px;
+    }
 
-                padding: 8px 10px;
 
-                font-size: 13px;
-            }
+    main {
 
+        padding-top: 110px;
+    }
 
-            main {
 
-                padding-top: 105px;
-            }
+    .page {
 
+        min-height:
+            calc(100vh - 110px);
 
-            .page {
+        padding: 55px 5%;
+    }
 
-                min-height: calc(100vh - 105px);
+}
 
-                padding: 55px 5%;
-            }
-
-
-            .hero h1 {
-
-                letter-spacing: -1px;
-            }
-
-
-            .hero p {
-
-                font-size: 16px;
-            }
-
-
-            .page-header h2 {
-
-                font-size: 32px;
-            }
-
-        }
-
-    </style>
+</style>
 
 </head>
 
@@ -843,794 +821,910 @@
 <body>
 
 
-    <!-- =========================
-         NAVIGATION
-    ========================= -->
+<!-- =========================
+     HEADER
+========================= -->
 
-    <header>
+<header>
 
-        <div
-            class="logo"
-            onclick="showPage('home')"
-        >
-            Manoj<span>.</span>
-        </div>
 
+<div
+class="logo"
+onclick="showPage('home')"
+>
 
-        <nav>
+Manoj<span>.</span>
 
-            <button
-                id="nav-home"
-                onclick="showPage('home')"
-            >
-                Home
-            </button>
+</div>
 
 
-            <button
-                id="nav-about"
-                onclick="showPage('about')"
-            >
-                About
-            </button>
+<nav>
 
 
-            <button
-                id="nav-projects"
-                onclick="showPage('projects')"
-            >
-                Projects
-            </button>
+<button
+id="nav-home"
+onclick="showPage('home')"
+>
 
+Home
 
-            <button
-                id="nav-calculator"
-                onclick="showPage('calculator')"
-            >
-                Calculator
-            </button>
+</button>
 
 
-            <button
-                id="nav-achievements"
-                onclick="showPage('achievements')"
-            >
-                Achievements
-            </button>
+<button
+id="nav-about"
+onclick="showPage('about')"
+>
 
-        </nav>
+About
 
-    </header>
+</button>
 
 
+<button
+id="nav-achievements"
+onclick="showPage('achievements')"
+>
 
-    <!-- =========================
-         MAIN
-    ========================= -->
+Achievements
 
-    <main>
+</button>
 
 
-        <!-- HOME -->
+</nav>
 
-        <section
-            id="home"
-            class="page active"
-        >
+</header>
 
-            <div class="hero">
 
-                <div class="small-title">
-                    STUDENT • DESIGNER • INNOVATOR
-                </div>
 
+<main>
 
-                <h1>
-                    Building ideas into
-                    <span>technology.</span>
-                </h1>
 
+<!-- =========================
+     HOME
+========================= -->
 
-                <p>
-                    I'm Manoj, a student interested in
-                    Computer Science, Artificial Intelligence,
-                    programming, electronics and innovation.
-                    I enjoy learning by building real projects.
-                </p>
+<section
+id="home"
+class="page active"
+>
 
 
-                <div class="hero-buttons">
+<div class="hero">
 
-                    <button
-                        class="primary-btn"
-                        onclick="showPage('projects')"
-                    >
-                        Explore My Work
-                    </button>
 
+<div class="small-title">
 
-                    <button
-                        class="secondary-btn"
-                        onclick="showPage('achievements')"
-                    >
-                        View Achievements
-                    </button>
+STUDENT • DESIGNER • INNOVATOR
 
-                </div>
+</div>
 
-            </div>
 
-        </section>
+<h1>
 
+Building ideas into
+<span>technology.</span>
 
+</h1>
 
-        <!-- ABOUT -->
 
-        <section
-            id="about"
-            class="page"
-        >
+<p>
 
-            <div class="page-header">
+I'm Manoj, a student interested in
+Computer Science, Artificial Intelligence,
+programming, electronics and innovation.
 
-                <h2>
-                    About Me
-                </h2>
+</p>
 
-                <p>
-                    A little about my interests and journey.
-                </p>
 
-            </div>
+<div class="hero-buttons">
 
 
-            <div class="about-box">
+<button
+class="primary-btn"
+onclick="showPage('work')"
+>
 
-                <p>
-                    I am a student passionate about technology,
-                    programming, electronics, artificial intelligence
-                    and creative design.
-                </p>
+Explore My Work
 
+</button>
 
-                <p>
-                    I enjoy creating practical projects using
-                    Arduino, sensors, motors, programming and
-                    web technologies.
-                </p>
 
+<button
+class="secondary-btn"
+onclick="showPage('achievements')"
+>
 
-                <p>
-                    I am particularly interested in Computer Science,
-                    AI/ML, embedded systems and building solutions
-                    that can solve real-world problems.
-                </p>
+View Achievements
 
+</button>
 
-                <p>
-                    This portfolio is a place where I can showcase
-                    the projects I build, the skills I develop and
-                    the achievements I earn along the way.
-                </p>
 
-            </div>
+</div>
 
-        </section>
 
+</div>
 
+</section>
 
-        <!-- PROJECTS -->
 
-        <section
-            id="projects"
-            class="page"
-        >
 
-            <div class="page-header">
+<!-- =========================
+     ABOUT
+========================= -->
 
-                <h2>
-                    My Work
-                </h2>
+<section
+id="about"
+class="page"
+>
 
-                <p>
-                    Projects and experiments I've worked on.
-                </p>
 
-            </div>
+<div class="page-header">
 
+<h2>
 
-            <div class="projects-grid">
+About Me
 
+</h2>
 
-                <div class="project-card">
 
-                    <div class="project-icon">
-                        🧮
-                    </div>
+<p>
 
-                    <h3>
-                        Interactive Calculator
-                    </h3>
+A little about my interests and journey.
 
-                    <p>
-                        A responsive calculator built with
-                        HTML, CSS and JavaScript with a clean
-                        user interface.
-                    </p>
+</p>
 
-                </div>
+</div>
 
 
-                <div class="project-card">
+<div class="about-box">
 
-                    <div class="project-icon">
-                        🤖
-                    </div>
 
-                    <h3>
-                        Arduino Projects
-                    </h3>
+<p>
 
-                    <p>
-                        Electronics and automation experiments
-                        using Arduino boards, sensors, motors
-                        and other components.
-                    </p>
+I am a student passionate about technology,
+programming, electronics, artificial intelligence
+and creative design.
 
-                </div>
+</p>
 
 
-                <div class="project-card">
+<p>
 
-                    <div class="project-icon">
-                        ✍️
-                    </div>
+I enjoy creating practical projects using
+Arduino, sensors, motors, programming and
+web technologies.
 
-                    <h3>
-                        XY Plotter
-                    </h3>
+</p>
 
-                    <p>
-                        A handwriting and drawing machine project
-                        combining programming, electronics and
-                        mechanical movement.
-                    </p>
 
-                </div>
+<p>
 
+I am particularly interested in Computer Science,
+AI/ML, embedded systems and building solutions
+that can solve real-world problems.
 
-            </div>
+</p>
 
-        </section>
 
+</div>
 
+</section>
 
-        <!-- CALCULATOR -->
 
-        <section
-            id="calculator"
-            class="page"
-        >
 
-            <div class="page-header">
+<!-- =========================
+     MY WORK
+========================= -->
 
-                <h2>
-                    Calculator
-                </h2>
+<section
+id="work"
+class="page"
+>
 
-                <p>
-                    An interactive project built for my portfolio.
-                </p>
 
-            </div>
+<div class="page-header">
 
+<h2>
 
-            <div class="calculator">
+My Work
 
+</h2>
 
-                <input
-                    type="text"
-                    id="display"
-                    readonly
-                >
 
+<p>
 
-                <div class="calculator-buttons">
+Projects I have built and experiments I am working on.
 
-                    <button
-                        class="clear"
-                        onclick="clearDisplay()"
-                    >
-                        C
-                    </button>
+</p>
 
+</div>
 
-                    <button
-                        onclick="deleteLast()"
-                    >
-                        ⌫
-                    </button>
 
+<div class="work-grid">
 
-                    <button
-                        onclick="appendValue('%')"
-                    >
-                        %
-                    </button>
 
+<!-- CALCULATOR -->
 
-                    <button
-                        class="operator"
-                        onclick="appendValue('/')"
-                    >
-                        ÷
-                    </button>
+<div class="work-card">
 
 
-                    <button
-                        onclick="appendValue('7')"
-                    >
-                        7
-                    </button>
+<div class="work-icon">
 
+🧮
 
-                    <button
-                        onclick="appendValue('8')"
-                    >
-                        8
-                    </button>
+</div>
 
 
-                    <button
-                        onclick="appendValue('9')"
-                    >
-                        9
-                    </button>
+<h3>
 
+Interactive Calculator
 
-                    <button
-                        class="operator"
-                        onclick="appendValue('*')"
-                    >
-                        ×
-                    </button>
+</h3>
 
 
-                    <button
-                        onclick="appendValue('4')"
-                    >
-                        4
-                    </button>
+<p>
 
+A clean and responsive calculator built using
+HTML, CSS and JavaScript.
 
-                    <button
-                        onclick="appendValue('5')"
-                    >
-                        5
-                    </button>
+</p>
 
 
-                    <button
-                        onclick="appendValue('6')"
-                    >
-                        6
-                    </button>
+<button
+class="primary-btn"
+onclick="showPage('calculator')"
+>
 
+Open Calculator
 
-                    <button
-                        class="operator"
-                        onclick="appendValue('-')"
-                    >
-                        −
-                    </button>
+</button>
 
 
-                    <button
-                        onclick="appendValue('1')"
-                    >
-                        1
-                    </button>
+</div>
 
 
-                    <button
-                        onclick="appendValue('2')"
-                    >
-                        2
-                    </button>
+<!-- FUTURE WORK -->
 
+<div class="work-card">
 
-                    <button
-                        onclick="appendValue('3')"
-                    >
-                        3
-                    </button>
 
+<div class="work-icon">
 
-                    <button
-                        class="operator"
-                        onclick="appendValue('+')"
-                    >
-                        +
-                    </button>
+＋
 
+</div>
 
-                    <button
-                        onclick="appendValue('0')"
-                    >
-                        0
-                    </button>
 
+<h3>
 
-                    <button
-                        onclick="appendValue('.')"
-                    >
-                        .
-                    </button>
+More Coming Soon
 
+</h3>
 
-                    <button
-                        class="equals"
-                        onclick="calculate()"
-                    >
-                        =
-                    </button>
 
+<p>
 
-                    <button
-                        class="operator"
-                        onclick="appendValue('**')"
-                    >
-                        ^
-                    </button>
+More of my projects and innovations will be
+added here as I build them.
 
-                </div>
+</p>
 
-            </div>
 
-        </section>
+</div>
 
 
+</div>
 
-        <!-- ACHIEVEMENTS -->
+</section>
 
-        <section
-            id="achievements"
-            class="page"
-        >
 
-            <div class="page-header">
 
-                <h2>
-                    Achievements
-                </h2>
+<!-- =========================
+     CALCULATOR
+========================= -->
 
-                <p>
-                    Certificates and participation.
-                </p>
+<section
+id="calculator"
+class="page"
+>
 
-            </div>
 
+<div class="page-header">
 
-            <div class="achievements-grid">
+<h2>
 
+Calculator
 
-                <!-- CERTIFICATE 1 -->
+</h2>
 
-                <div class="certificate-card">
 
-                    <img
-                        src="certificate.jpg"
-                        alt="MyGov Quiz Certificate 1"
-                        onclick="openCertificate(this.src)"
-                    >
+<p>
 
+An interactive project from my portfolio.
 
-                    <div class="certificate-info">
+</p>
 
-                        <h3>
-                            MyGov Quiz
-                        </h3>
+</div>
 
-                        <p>
-                            Certificate 1
-                        </p>
 
-                    </div>
+<div class="calculator">
 
-                </div>
 
+<input
+id="display"
+type="text"
+readonly
+>
 
 
-                <!-- CERTIFICATE 2 -->
+<div class="calculator-buttons">
 
-                <div class="certificate-card">
 
-                    <img
-                        src="certificate%20(1).jpg"
-                        alt="MyGov Quiz Certificate 2"
-                        onclick="openCertificate(this.src)"
-                    >
+<button
+class="clear"
+onclick="clearDisplay()"
+>
 
+C
 
-                    <div class="certificate-info">
+</button>
 
-                        <h3>
-                            MyGov Quiz
-                        </h3>
 
-                        <p>
-                            Certificate 2
-                        </p>
+<button
+onclick="deleteLast()"
+>
 
-                    </div>
+⌫
 
-                </div>
+</button>
 
 
+<button
+onclick="appendValue('%')"
+>
 
-                <!-- CERTIFICATE 3 -->
+%
 
-                <div class="certificate-card">
+</button>
 
-                    <img
-                        src="certificate%20(2).jpg"
-                        alt="MyGov Quiz Certificate 3"
-                        onclick="openCertificate(this.src)"
-                    >
 
+<button
+class="operator"
+onclick="appendValue('/')"
+>
 
-                    <div class="certificate-info">
+÷
 
-                        <h3>
-                            MyGov Quiz
-                        </h3>
+</button>
 
-                        <p>
-                            Certificate 3
-                        </p>
 
-                    </div>
+<button
+onclick="appendValue('7')"
+>
 
-                </div>
+7
 
+</button>
 
-            </div>
 
-        </section>
+<button
+onclick="appendValue('8')"
+>
 
-    </main>
+8
 
+</button>
 
 
-    <!-- =========================
-         IMAGE VIEWER
-    ========================= -->
+<button
+onclick="appendValue('9')"
+>
 
-    <div
-        class="modal"
-        id="certificateModal"
-    >
+9
 
-        <span
-            class="close-modal"
-            onclick="closeCertificate()"
-        >
-            &times;
-        </span>
+</button>
 
 
-        <img
-            id="largeCertificate"
-            src=""
-            alt="Certificate"
-        >
+<button
+class="operator"
+onclick="appendValue('*')"
+>
 
-    </div>
+×
 
+</button>
 
 
-    <!-- =========================
-         FOOTER
-    ========================= -->
+<button
+onclick="appendValue('4')"
+>
 
-    <footer>
+4
 
-        © 2026 Manoj. Built with HTML, CSS & JavaScript.
+</button>
 
-    </footer>
 
+<button
+onclick="appendValue('5')"
+>
 
+5
 
-    <!-- =========================
-         JAVASCRIPT
-    ========================= -->
+</button>
 
-    <script>
 
+<button
+onclick="appendValue('6')"
+>
 
-        /* =========================
-           PAGE SWITCHING
-        ========================= */
+6
 
-        function showPage(pageName) {
+</button>
 
-            const pages =
-                document.querySelectorAll(".page");
 
+<button
+class="operator"
+onclick="appendValue('-')"
+>
 
-            pages.forEach(function(page) {
+−
 
-                page.classList.remove("active");
+</button>
 
-            });
 
+<button
+onclick="appendValue('1')"
+>
 
-            const selectedPage =
-                document.getElementById(pageName);
+1
 
+</button>
 
-            if (selectedPage) {
 
-                selectedPage.classList.add("active");
+<button
+onclick="appendValue('2')"
+>
 
-            }
+2
 
+</button>
 
-            const navButtons =
-                document.querySelectorAll("nav button");
 
+<button
+onclick="appendValue('3')"
+>
 
-            navButtons.forEach(function(button) {
+3
 
-                button.classList.remove("active");
+</button>
 
-            });
 
+<button
+class="operator"
+onclick="appendValue('+')"
+>
 
-            const activeButton =
-                document.getElementById(
-                    "nav-" + pageName
-                );
++
 
+</button>
 
-            if (activeButton) {
 
-                activeButton.classList.add("active");
+<button
+onclick="appendValue('0')"
+>
 
-            }
+0
 
+</button>
 
-            window.scrollTo({
 
-                top: 0,
+<button
+onclick="appendValue('.')"
+>
 
-                behavior: "smooth"
+.
 
-            });
+</button>
 
-        }
 
+<button
+class="equals"
+onclick="calculate()"
+>
 
-        /* =========================
-           CALCULATOR
-        ========================= */
+=
 
-        const display =
-            document.getElementById("display");
+</button>
 
 
-        function appendValue(value) {
+<button
+class="operator"
+onclick="appendValue('**')"
+>
 
-            display.value += value;
+^
 
-        }
+</button>
 
 
-        function clearDisplay() {
+</div>
 
-            display.value = "";
+</div>
 
-        }
+</section>
 
 
-        function deleteLast() {
 
-            display.value =
-                display.value.slice(0, -1);
+<!-- =========================
+     ACHIEVEMENTS
+========================= -->
 
-        }
+<section
+id="achievements"
+class="page"
+>
 
 
-        function calculate() {
+<div class="page-header">
 
-            try {
+<h2>
 
-                if (display.value.trim() === "") {
+Achievements
 
-                    return;
+</h2>
 
-                }
 
+<p>
 
-                display.value =
-                    eval(display.value);
+Certificates and participation.
 
-            }
+</p>
 
-            catch {
+</div>
 
-                display.value =
-                    "Error";
 
-            }
+<div class="achievements-grid">
 
-        }
 
+<!-- CERTIFICATE 1 -->
 
-        /* =========================
-           CERTIFICATE VIEWER
-        ========================= */
+<div class="certificate-card">
 
-        function openCertificate(image) {
 
-            const modal =
-                document.getElementById(
-                    "certificateModal"
-                );
+<img
+src="certificate.jpg"
+alt="MyGov Quiz Certificate 1"
+onclick="openCertificate(this.src)"
+>
 
 
-            const largeImage =
-                document.getElementById(
-                    "largeCertificate"
-                );
+<div class="certificate-info">
 
+<h3>
 
-            largeImage.src = image;
+MyGov Quiz
 
+</h3>
 
-            modal.classList.add("show");
 
-        }
+<p>
 
+Certificate 1
 
-        function closeCertificate() {
+</p>
 
-            document
-                .getElementById(
-                    "certificateModal"
-                )
-                .classList.remove("show");
+</div>
 
-        }
+</div>
 
 
-        /* Close popup when clicking background */
 
-        document
-            .getElementById("certificateModal")
-            .addEventListener(
-                "click",
-                function(event) {
+<!-- CERTIFICATE 2 -->
 
-                    if (
-                        event.target === this
-                    ) {
+<div class="certificate-card">
 
-                        closeCertificate();
 
-                    }
+<img
+src="certificate%20(1).jpg"
+alt="MyGov Quiz Certificate 2"
+onclick="openCertificate(this.src)"
+>
 
-                }
-            );
 
+<div class="certificate-info">
 
-        /* =========================
-           START WITH HOME
-        ========================= */
+<h3>
 
-        showPage("home");
+MyGov Quiz
 
-    </script>
+</h3>
+
+
+<p>
+
+Certificate 2
+
+</p>
+
+</div>
+
+</div>
+
+
+
+<!-- CERTIFICATE 3 -->
+
+<div class="certificate-card">
+
+
+<img
+src="certificate%20(2).jpg"
+alt="MyGov Quiz Certificate 3"
+onclick="openCertificate(this.src)"
+>
+
+
+<div class="certificate-info">
+
+<h3>
+
+MyGov Quiz
+
+</h3>
+
+
+<p>
+
+Certificate 3
+
+</p>
+
+</div>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+</main>
+
+
+
+<!-- =========================
+     CERTIFICATE POPUP
+========================= -->
+
+<div
+class="modal"
+id="certificateModal"
+>
+
+
+<span
+class="close-modal"
+onclick="closeCertificate()"
+>
+
+&times;
+
+</span>
+
+
+<img
+id="largeCertificate"
+src=""
+alt="Certificate"
+>
+
+</div>
+
+
+
+<footer>
+
+© 2026 Manoj. Built with HTML, CSS & JavaScript.
+
+</footer>
+
+
+
+<script>
+
+
+/* =========================
+   PAGE SWITCHING
+========================= */
+
+function showPage(pageName) {
+
+
+const pages =
+document.querySelectorAll(".page");
+
+
+pages.forEach(function(page) {
+
+page.classList.remove("active");
+
+});
+
+
+const selectedPage =
+document.getElementById(pageName);
+
+
+if (selectedPage) {
+
+selectedPage.classList.add("active");
+
+}
+
+
+/* NAV ACTIVE STATE */
+
+const navButtons =
+document.querySelectorAll("nav button");
+
+
+navButtons.forEach(function(button) {
+
+button.classList.remove("active");
+
+});
+
+
+const activeButton =
+document.getElementById(
+"nav-" + pageName
+);
+
+
+if (activeButton) {
+
+activeButton.classList.add("active");
+
+}
+
+
+/* Scroll to top */
+
+window.scrollTo({
+
+top: 0,
+
+behavior: "smooth"
+
+});
+
+}
+
+
+/* =========================
+   CALCULATOR
+========================= */
+
+const display =
+document.getElementById("display");
+
+
+function appendValue(value) {
+
+display.value += value;
+
+}
+
+
+function clearDisplay() {
+
+display.value = "";
+
+}
+
+
+function deleteLast() {
+
+display.value =
+display.value.slice(0, -1);
+
+}
+
+
+function calculate() {
+
+try {
+
+
+if (display.value.trim() === "") {
+
+return;
+
+}
+
+
+display.value =
+eval(display.value);
+
+
+}
+
+catch {
+
+display.value = "Error";
+
+}
+
+}
+
+
+/* =========================
+   CERTIFICATE VIEWER
+========================= */
+
+function openCertificate(image) {
+
+
+const modal =
+document.getElementById(
+"certificateModal"
+);
+
+
+const largeImage =
+document.getElementById(
+"largeCertificate"
+);
+
+
+largeImage.src = image;
+
+
+modal.classList.add("show");
+
+}
+
+
+function closeCertificate() {
+
+
+document
+.getElementById(
+"certificateModal"
+)
+.classList.remove("show");
+
+}
+
+
+/* Close popup */
+
+document
+.getElementById("certificateModal")
+.addEventListener(
+"click",
+function(event) {
+
+
+if (event.target === this) {
+
+closeCertificate();
+
+}
+
+});
+
+
+/* =========================
+   START
+========================= */
+
+showPage("home");
+
+
+</script>
 
 
 </body>
