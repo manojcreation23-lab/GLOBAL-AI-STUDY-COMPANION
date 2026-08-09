@@ -1,320 +1,610 @@
 ```html
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Manoj | AI & Innovation</title>
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Manoj | Portfolio</title>
 
     <style>
+
+        /* =========================
+           BASIC
+        ========================= */
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+        }
+
+        html {
             scroll-behavior: smooth;
         }
 
         body {
-            font-family: Arial, sans-serif;
-            background: #0b1020;
-            color: white;
+
+            font-family:
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Arial,
+                sans-serif;
+
+            background: #f7f9fc;
+
+            color: #172033;
+
+            min-height: 100vh;
         }
 
-        /* ================= NAVBAR ================= */
 
-        nav {
-            position: sticky;
+        /* =========================
+           NAVBAR
+        ========================= */
+
+        header {
+
+            position: fixed;
+
             top: 0;
-            z-index: 1000;
+            left: 0;
 
-            background: #080d1a;
+            width: 100%;
 
-            padding: 18px 7%;
+            height: 72px;
+
+            background: rgba(255,255,255,0.95);
+
+            backdrop-filter: blur(12px);
+
+            border-bottom: 1px solid #e7eaf0;
 
             display: flex;
-            justify-content: space-between;
+
             align-items: center;
 
-            border-bottom: 1px solid #26304a;
+            justify-content: space-between;
+
+            padding: 0 7%;
+
+            z-index: 1000;
         }
+
 
         .logo {
-            font-size: 25px;
-            font-weight: bold;
-            color: #66e3ff;
-        }
 
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 25px;
-        }
+            font-size: 23px;
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-size: 15px;
+            font-weight: 700;
+
+            color: #111827;
+
             cursor: pointer;
         }
 
-        nav a:hover {
-            color: #66e3ff;
+
+        .logo span {
+
+            color: #2563eb;
         }
 
 
-        /* ================= COMMON ================= */
-
-        section {
-            padding: 80px 8%;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 36px;
-            margin-bottom: 12px;
-        }
-
-        .section-subtitle {
-            text-align: center;
-            color: #9ca8c4;
-            margin-bottom: 40px;
-        }
-
-
-        /* ================= HOME ================= */
-
-        #home {
-            min-height: 90vh;
+        nav {
 
             display: flex;
-            justify-content: center;
+
+            gap: 8px;
+        }
+
+
+        nav button {
+
+            border: none;
+
+            background: transparent;
+
+            padding: 10px 15px;
+
+            border-radius: 8px;
+
+            font-size: 14px;
+
+            color: #4b5563;
+
+            cursor: pointer;
+
+            transition: 0.25s;
+        }
+
+
+        nav button:hover {
+
+            background: #eef4ff;
+
+            color: #2563eb;
+        }
+
+
+        nav button.active {
+
+            background: #2563eb;
+
+            color: white;
+        }
+
+
+        /* =========================
+           MAIN
+        ========================= */
+
+        main {
+
+            padding-top: 72px;
+
+            min-height: 100vh;
+        }
+
+
+        .page {
+
+            display: none;
+
+            min-height: calc(100vh - 72px);
+
+            padding: 70px 8%;
+        }
+
+
+        .page.active {
+
+            display: block;
+        }
+
+
+        /* =========================
+           HOME
+        ========================= */
+
+        #home {
+
+            display: none;
+
             align-items: center;
+
+            justify-content: center;
 
             text-align: center;
 
             background:
-                radial-gradient(circle at top, #172342, #0b1020 60%);
+
+                radial-gradient(
+                    circle at 20% 20%,
+                    #eaf2ff,
+                    transparent 35%
+                ),
+
+                radial-gradient(
+                    circle at 80% 80%,
+                    #eef7ff,
+                    transparent 35%
+                ),
+
+                #ffffff;
         }
+
+
+        #home.active {
+
+            display: flex;
+        }
+
+
+        .hero {
+
+            max-width: 850px;
+        }
+
+
+        .small-title {
+
+            color: #2563eb;
+
+            font-weight: 600;
+
+            font-size: 15px;
+
+            letter-spacing: 1px;
+
+            margin-bottom: 18px;
+        }
+
 
         .hero h1 {
-            font-size: 55px;
-            margin-bottom: 15px;
+
+            font-size: clamp(42px, 7vw, 75px);
+
+            line-height: 1.05;
+
+            letter-spacing: -2px;
+
+            color: #111827;
+
+            margin-bottom: 22px;
         }
+
 
         .hero h1 span {
-            color: #66e3ff;
+
+            color: #2563eb;
         }
+
 
         .hero p {
-            max-width: 700px;
+
+            max-width: 680px;
+
             margin: auto;
 
-            color: #b9c3d9;
+            color: #667085;
 
             font-size: 18px;
+
+            line-height: 1.8;
         }
 
-        .buttons {
-            margin-top: 30px;
+
+        .hero-buttons {
+
+            margin-top: 35px;
+
+            display: flex;
+
+            justify-content: center;
+
+            gap: 12px;
+
+            flex-wrap: wrap;
         }
 
-        .btn {
-            display: inline-block;
 
-            padding: 12px 25px;
+        .primary-btn {
 
-            margin: 5px;
+            border: none;
 
-            border-radius: 30px;
+            background: #2563eb;
 
-            background: #66e3ff;
+            color: white;
 
-            color: #07101b;
+            padding: 13px 23px;
 
-            text-decoration: none;
+            border-radius: 9px;
 
-            font-weight: bold;
+            font-weight: 600;
 
             cursor: pointer;
+
+            transition: 0.25s;
         }
 
-        .btn:hover {
+
+        .primary-btn:hover {
+
+            background: #1d4ed8;
+
             transform: translateY(-2px);
         }
 
-        .btn-outline {
-            background: transparent;
-            color: #66e3ff;
-            border: 1px solid #66e3ff;
+
+        .secondary-btn {
+
+            border: 1px solid #d9dee8;
+
+            background: white;
+
+            color: #344054;
+
+            padding: 13px 23px;
+
+            border-radius: 9px;
+
+            font-weight: 600;
+
+            cursor: pointer;
+
+            transition: 0.25s;
         }
 
 
-        /* ================= ABOUT ================= */
+        .secondary-btn:hover {
+
+            border-color: #2563eb;
+
+            color: #2563eb;
+        }
+
+
+        /* =========================
+           PAGE HEADER
+        ========================= */
+
+        .page-header {
+
+            max-width: 800px;
+
+            margin: 0 auto 45px;
+
+            text-align: center;
+        }
+
+
+        .page-header h2 {
+
+            font-size: 40px;
+
+            color: #111827;
+
+            margin-bottom: 12px;
+        }
+
+
+        .page-header p {
+
+            color: #667085;
+
+            font-size: 16px;
+        }
+
+
+        /* =========================
+           ABOUT
+        ========================= */
 
         .about-box {
-            max-width: 900px;
+
+            max-width: 850px;
+
             margin: auto;
 
-            background: #121a30;
+            background: white;
 
-            padding: 30px;
+            border: 1px solid #e5e7eb;
 
-            border-radius: 18px;
+            border-radius: 16px;
 
-            border: 1px solid #27304a;
+            padding: 35px;
+
+            box-shadow:
+                0 10px 30px rgba(16,24,40,0.05);
         }
+
 
         .about-box p {
-            color: #c2cbe0;
-            margin-bottom: 15px;
+
+            color: #667085;
+
+            line-height: 1.8;
+
+            margin-bottom: 18px;
         }
 
 
-        /* ================= PROJECTS ================= */
+        .about-box p:last-child {
 
-        .projects {
+            margin-bottom: 0;
+        }
+
+
+        /* =========================
+           PROJECTS
+        ========================= */
+
+        .projects-grid {
+
+            max-width: 1050px;
+
+            margin: auto;
+
             display: grid;
 
             grid-template-columns:
-                repeat(auto-fit, minmax(250px, 1fr));
+                repeat(auto-fit, minmax(260px, 1fr));
 
-            gap: 25px;
+            gap: 22px;
         }
 
-        .project {
-            background: #121a30;
 
-            padding: 25px;
+        .project-card {
 
-            border-radius: 18px;
+            background: white;
 
-            border: 1px solid #27304a;
+            border: 1px solid #e5e7eb;
+
+            border-radius: 15px;
+
+            padding: 28px;
 
             transition: 0.3s;
+
+            box-shadow:
+                0 8px 25px rgba(16,24,40,0.04);
         }
 
-        .project:hover {
-            transform: translateY(-7px);
-            border-color: #66e3ff;
+
+        .project-card:hover {
+
+            transform: translateY(-5px);
+
+            border-color: #b8cdfa;
+
+            box-shadow:
+                0 15px 35px rgba(37,99,235,0.10);
         }
 
-        .project h3 {
-            color: #66e3ff;
+
+        .project-icon {
+
+            width: 45px;
+
+            height: 45px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            background: #eef4ff;
+
+            border-radius: 10px;
+
+            font-size: 21px;
+
+            margin-bottom: 18px;
+        }
+
+
+        .project-card h3 {
+
+            color: #111827;
+
             margin-bottom: 10px;
+
+            font-size: 20px;
         }
 
-        .project p {
-            color: #aeb8ce;
+
+        .project-card p {
+
+            color: #667085;
+
+            line-height: 1.7;
+
+            font-size: 15px;
         }
 
 
-        /* ================= CALCULATOR ================= */
+        /* =========================
+           CALCULATOR
+        ========================= */
 
         .calculator {
-            max-width: 400px;
+
+            max-width: 390px;
 
             margin: auto;
 
-            background: #121a30;
+            background: white;
 
-            padding: 25px;
+            padding: 22px;
 
-            border-radius: 20px;
+            border-radius: 18px;
 
-            border: 1px solid #27304a;
+            border: 1px solid #e5e7eb;
+
+            box-shadow:
+                0 15px 40px rgba(16,24,40,0.08);
         }
 
+
         #display {
+
             width: 100%;
 
             height: 70px;
 
+            border: 1px solid #e5e7eb;
+
+            background: #f8fafc;
+
+            border-radius: 10px;
+
             margin-bottom: 15px;
 
-            padding: 10px;
-
-            background: #080d1a;
-
-            color: white;
-
-            border: 1px solid #27304a;
-
-            border-radius: 12px;
-
-            font-size: 28px;
+            padding: 12px;
 
             text-align: right;
+
+            font-size: 27px;
+
+            color: #111827;
+
+            outline: none;
         }
 
+
         .calculator-buttons {
+
             display: grid;
 
             grid-template-columns:
                 repeat(4, 1fr);
 
-            gap: 10px;
+            gap: 9px;
         }
 
+
         .calculator-buttons button {
-            height: 60px;
+
+            height: 58px;
 
             border: none;
 
-            border-radius: 12px;
+            border-radius: 10px;
 
-            background: #202a45;
+            background: #f1f4f8;
 
-            color: white;
+            color: #1f2937;
 
-            font-size: 20px;
+            font-size: 18px;
 
             cursor: pointer;
+
+            transition: 0.2s;
         }
+
 
         .calculator-buttons button:hover {
-            background: #344463;
-        }
 
-        .operator {
-            color: #66e3ff !important;
-        }
-
-        .equals {
-            background: #66e3ff !important;
-            color: #07101b !important;
-        }
-
-        .clear {
-            color: #ff7777 !important;
+            background: #e5eaf1;
         }
 
 
-        /* ================= ACHIEVEMENTS ================= */
+        .calculator-buttons .operator {
 
-        /*
-           IMPORTANT:
-           Achievements is HIDDEN when the website opens.
-        */
+            color: #2563eb;
 
-        #achievements {
-            display: none;
-
-            background: #0e1528;
-
-            min-height: 100vh;
+            background: #eef4ff;
         }
 
-        /*
-           When the URL contains #achievements,
-           the section becomes visible.
-        */
 
-        #achievements:target {
-            display: block;
+        .calculator-buttons .equals {
+
+            background: #2563eb;
+
+            color: white;
         }
+
+
+        .calculator-buttons .clear {
+
+            color: #dc2626;
+
+            background: #fff1f2;
+        }
+
+
+        /* =========================
+           ACHIEVEMENTS
+        ========================= */
 
         .achievements-grid {
+
             max-width: 1100px;
 
             margin: auto;
@@ -324,614 +614,797 @@
             grid-template-columns:
                 repeat(auto-fit, minmax(280px, 1fr));
 
-            gap: 25px;
+            gap: 24px;
         }
 
-        .certificate {
-            background: #121a30;
 
-            padding: 15px;
+        .certificate-card {
 
-            border-radius: 18px;
+            background: white;
 
-            border: 1px solid #27304a;
+            border: 1px solid #e5e7eb;
 
-            text-align: center;
+            border-radius: 16px;
+
+            padding: 14px;
+
+            box-shadow:
+                0 10px 30px rgba(16,24,40,0.05);
 
             transition: 0.3s;
         }
 
-        .certificate:hover {
-            transform: translateY(-7px);
 
-            border-color: #66e3ff;
+        .certificate-card:hover {
+
+            transform: translateY(-5px);
+
+            border-color: #b8cdfa;
+
+            box-shadow:
+                0 15px 35px rgba(37,99,235,0.10);
         }
 
-        .certificate img {
+
+        .certificate-card img {
+
             width: 100%;
 
-            height: 240px;
+            height: 250px;
 
             object-fit: contain;
 
-            background: white;
+            background: #f8fafc;
 
             border-radius: 10px;
 
             cursor: pointer;
         }
 
-        .certificate h3 {
-            margin-top: 15px;
 
-            color: #66e3ff;
-        }
+        .certificate-info {
 
-        .certificate p {
-            color: #9da8c2;
-
-            margin-top: 5px;
+            padding: 16px 5px 5px;
         }
 
 
-        /* ================= IMAGE POPUP ================= */
+        .certificate-info h3 {
+
+            font-size: 17px;
+
+            color: #111827;
+
+            margin-bottom: 5px;
+        }
+
+
+        .certificate-info p {
+
+            color: #667085;
+
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           IMAGE MODAL
+        ========================= */
 
         .modal {
+
             display: none;
 
             position: fixed;
 
-            z-index: 5000;
+            inset: 0;
 
-            left: 0;
-            top: 0;
+            background: rgba(15,23,42,0.88);
 
-            width: 100%;
-            height: 100%;
-
-            background: rgba(0,0,0,0.92);
-
-            justify-content: center;
+            z-index: 3000;
 
             align-items: center;
 
-            padding: 30px;
+            justify-content: center;
+
+            padding: 25px;
         }
+
+
+        .modal.show {
+
+            display: flex;
+        }
+
 
         .modal img {
-            max-width: 95%;
-            max-height: 90%;
 
-            border-radius: 10px;
+            max-width: 95%;
+
+            max-height: 90vh;
+
+            background: white;
+
+            border-radius: 8px;
         }
 
-        .close {
+
+        .close-modal {
+
             position: absolute;
 
-            top: 15px;
+            top: 20px;
+
             right: 30px;
 
-            font-size: 45px;
+            font-size: 38px;
 
             color: white;
 
             cursor: pointer;
+
+            line-height: 1;
         }
 
 
-        /* ================= FOOTER ================= */
+        /* =========================
+           FOOTER
+        ========================= */
 
         footer {
+
             text-align: center;
 
-            padding: 25px;
+            padding: 22px;
 
-            background: #080d1a;
+            border-top: 1px solid #e5e7eb;
 
-            color: #7f8aa5;
+            color: #98a2b3;
 
-            border-top: 1px solid #27304a;
+            background: white;
+
+            font-size: 14px;
         }
 
 
-        /* ================= MOBILE ================= */
+        /* =========================
+           MOBILE
+        ========================= */
 
         @media (max-width: 700px) {
 
-            nav {
+            header {
+
+                height: auto;
+
+                min-height: 70px;
+
+                padding: 12px 5%;
+
                 flex-direction: column;
 
-                gap: 15px;
+                gap: 8px;
             }
 
-            nav ul {
-                gap: 12px;
+
+            nav {
 
                 flex-wrap: wrap;
 
                 justify-content: center;
             }
 
-            .hero h1 {
-                font-size: 40px;
+
+            nav button {
+
+                padding: 8px 10px;
+
+                font-size: 13px;
             }
 
-            section {
-                padding: 60px 5%;
+
+            main {
+
+                padding-top: 105px;
             }
+
+
+            .page {
+
+                min-height: calc(100vh - 105px);
+
+                padding: 55px 5%;
+            }
+
+
+            .hero h1 {
+
+                letter-spacing: -1px;
+            }
+
+
+            .hero p {
+
+                font-size: 16px;
+            }
+
+
+            .page-header h2 {
+
+                font-size: 32px;
+            }
+
         }
 
     </style>
+
 </head>
 
 
 <body>
 
 
-    <!-- ================= NAVIGATION ================= -->
+    <!-- =========================
+         NAVIGATION
+    ========================= -->
 
-    <nav>
+    <header>
 
-        <div class="logo">
-            Manoj
+        <div
+            class="logo"
+            onclick="showPage('home')"
+        >
+            Manoj<span>.</span>
         </div>
 
-        <ul>
 
-            <li>
-                <a href="#home">
-                    Home
-                </a>
-            </li>
+        <nav>
 
-            <li>
-                <a href="#about">
-                    About
-                </a>
-            </li>
-
-            <li>
-                <a href="#projects">
-                    Projects
-                </a>
-            </li>
-
-            <li>
-                <a href="#calculator">
-                    Calculator
-                </a>
-            </li>
-
-            <li>
-                <a href="#achievements">
-                    🏆 Achievements
-                </a>
-            </li>
-
-        </ul>
-
-    </nav>
-
-
-
-    <!-- ================= HOME ================= -->
-
-    <section id="home">
-
-        <div class="hero">
-
-            <h1>
-                Hi, I'm
-                <span>Manoj</span>
-            </h1>
-
-            <p>
-                Student • Designer • Programmer • Young Innovator
-            </p>
-
-            <p>
-                Interested in Artificial Intelligence,
-                Computer Science, Embedded Systems,
-                Programming and Innovation.
-            </p>
-
-
-            <div class="buttons">
-
-                <a
-                    href="#projects"
-                    class="btn"
-                >
-                    View Projects
-                </a>
-
-
-                <a
-                    href="#achievements"
-                    class="btn btn-outline"
-                >
-                    🏆 My Achievements
-                </a>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- ================= ABOUT ================= -->
-
-    <section id="about">
-
-        <h2 class="section-title">
-            About Me
-        </h2>
-
-        <p class="section-subtitle">
-            My journey and interests
-        </p>
-
-
-        <div class="about-box">
-
-            <p>
-                I am a student passionate about technology,
-                programming, electronics, artificial intelligence
-                and creative design.
-            </p>
-
-            <p>
-                I enjoy building practical projects using Arduino,
-                sensors, programming and different technologies.
-            </p>
-
-            <p>
-                My goal is to study Computer Science and
-                Artificial Intelligence and create useful
-                solutions for real-world problems.
-            </p>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- ================= PROJECTS ================= -->
-
-    <section id="projects">
-
-        <h2 class="section-title">
-            Projects
-        </h2>
-
-        <p class="section-subtitle">
-            Things I have built and explored
-        </p>
-
-
-        <div class="projects">
-
-
-            <div class="project">
-
-                <h3>
-                    🧮 Interactive Calculator
-                </h3>
-
-                <p>
-                    A modern web calculator created using
-                    HTML, CSS and JavaScript.
-                </p>
-
-            </div>
-
-
-            <div class="project">
-
-                <h3>
-                    🤖 Arduino Projects
-                </h3>
-
-                <p>
-                    Electronics and automation projects
-                    using Arduino, sensors and motors.
-                </p>
-
-            </div>
-
-
-            <div class="project">
-
-                <h3>
-                    ✍️ XY Plotter
-                </h3>
-
-                <p>
-                    A handwriting and drawing machine
-                    based on Arduino and motor control.
-                </p>
-
-            </div>
-
-
-        </div>
-
-    </section>
-
-
-
-    <!-- ================= CALCULATOR ================= -->
-
-    <section id="calculator">
-
-        <h2 class="section-title">
-            🧮 Interactive Calculator
-        </h2>
-
-        <p class="section-subtitle">
-            Try it yourself
-        </p>
-
-
-        <div class="calculator">
-
-
-            <input
-                id="display"
-                type="text"
-                readonly
+            <button
+                id="nav-home"
+                onclick="showPage('home')"
             >
+                Home
+            </button>
 
 
-            <div class="calculator-buttons">
+            <button
+                id="nav-about"
+                onclick="showPage('about')"
+            >
+                About
+            </button>
 
 
-                <button
-                    class="clear"
-                    onclick="clearDisplay()"
-                >
-                    C
-                </button>
+            <button
+                id="nav-projects"
+                onclick="showPage('projects')"
+            >
+                Projects
+            </button>
 
 
-                <button
-                    onclick="deleteLast()"
-                >
-                    ⌫
-                </button>
+            <button
+                id="nav-calculator"
+                onclick="showPage('calculator')"
+            >
+                Calculator
+            </button>
 
 
-                <button
-                    onclick="appendValue('%')"
-                >
-                    %
-                </button>
+            <button
+                id="nav-achievements"
+                onclick="showPage('achievements')"
+            >
+                Achievements
+            </button>
+
+        </nav>
+
+    </header>
 
 
-                <button
-                    class="operator"
-                    onclick="appendValue('/')"
-                >
-                    ÷
-                </button>
+
+    <!-- =========================
+         MAIN
+    ========================= -->
+
+    <main>
 
 
-                <button
-                    onclick="appendValue('7')"
-                >
-                    7
-                </button>
+        <!-- HOME -->
+
+        <section
+            id="home"
+            class="page active"
+        >
+
+            <div class="hero">
+
+                <div class="small-title">
+                    STUDENT • DESIGNER • INNOVATOR
+                </div>
 
 
-                <button
-                    onclick="appendValue('8')"
-                >
-                    8
-                </button>
+                <h1>
+                    Building ideas into
+                    <span>technology.</span>
+                </h1>
 
 
-                <button
-                    onclick="appendValue('9')"
-                >
-                    9
-                </button>
+                <p>
+                    I'm Manoj, a student interested in
+                    Computer Science, Artificial Intelligence,
+                    programming, electronics and innovation.
+                    I enjoy learning by building real projects.
+                </p>
 
 
-                <button
-                    class="operator"
-                    onclick="appendValue('*')"
-                >
-                    ×
-                </button>
+                <div class="hero-buttons">
+
+                    <button
+                        class="primary-btn"
+                        onclick="showPage('projects')"
+                    >
+                        Explore My Work
+                    </button>
 
 
-                <button
-                    onclick="appendValue('4')"
-                >
-                    4
-                </button>
+                    <button
+                        class="secondary-btn"
+                        onclick="showPage('achievements')"
+                    >
+                        View Achievements
+                    </button>
 
-
-                <button
-                    onclick="appendValue('5')"
-                >
-                    5
-                </button>
-
-
-                <button
-                    onclick="appendValue('6')"
-                >
-                    6
-                </button>
-
-
-                <button
-                    class="operator"
-                    onclick="appendValue('-')"
-                >
-                    −
-                </button>
-
-
-                <button
-                    onclick="appendValue('1')"
-                >
-                    1
-                </button>
-
-
-                <button
-                    onclick="appendValue('2')"
-                >
-                    2
-                </button>
-
-
-                <button
-                    onclick="appendValue('3')"
-                >
-                    3
-                </button>
-
-
-                <button
-                    class="operator"
-                    onclick="appendValue('+')"
-                >
-                    +
-                </button>
-
-
-                <button
-                    onclick="appendValue('0')"
-                >
-                    0
-                </button>
-
-
-                <button
-                    onclick="appendValue('.')"
-                >
-                    .
-                </button>
-
-
-                <button
-                    class="equals"
-                    onclick="calculate()"
-                >
-                    =
-                </button>
-
-
-                <button
-                    class="operator"
-                    onclick="appendValue('**')"
-                >
-                    ^
-                </button>
-
+                </div>
 
             </div>
 
-        </div>
-
-    </section>
+        </section>
 
 
 
-    <!-- ================= ACHIEVEMENTS ================= -->
+        <!-- ABOUT -->
 
-    <section id="achievements">
+        <section
+            id="about"
+            class="page"
+        >
 
-        <h2 class="section-title">
-            🏆 My Achievements
-        </h2>
+            <div class="page-header">
 
-        <p class="section-subtitle">
-            My certificates and participation
-        </p>
-
-
-        <div class="achievements-grid">
-
-
-            <!-- CERTIFICATE 1 -->
-
-            <div class="certificate">
-
-                <img
-                    src="certificate.jpg"
-                    alt="MyGov Quiz Certificate 1"
-                    onclick="openCertificate(this.src)"
-                >
-
-                <h3>
-                    MyGov Quiz
-                </h3>
+                <h2>
+                    About Me
+                </h2>
 
                 <p>
-                    Certificate 1
+                    A little about my interests and journey.
                 </p>
 
             </div>
 
 
-
-            <!-- CERTIFICATE 2 -->
-
-            <div class="certificate">
-
-                <img
-                    src="certificate%20(1).jpg"
-                    alt="MyGov Quiz Certificate 2"
-                    onclick="openCertificate(this.src)"
-                >
-
-                <h3>
-                    MyGov Quiz
-                </h3>
+            <div class="about-box">
 
                 <p>
-                    Certificate 2
+                    I am a student passionate about technology,
+                    programming, electronics, artificial intelligence
+                    and creative design.
+                </p>
+
+
+                <p>
+                    I enjoy creating practical projects using
+                    Arduino, sensors, motors, programming and
+                    web technologies.
+                </p>
+
+
+                <p>
+                    I am particularly interested in Computer Science,
+                    AI/ML, embedded systems and building solutions
+                    that can solve real-world problems.
+                </p>
+
+
+                <p>
+                    This portfolio is a place where I can showcase
+                    the projects I build, the skills I develop and
+                    the achievements I earn along the way.
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- PROJECTS -->
+
+        <section
+            id="projects"
+            class="page"
+        >
+
+            <div class="page-header">
+
+                <h2>
+                    My Work
+                </h2>
+
+                <p>
+                    Projects and experiments I've worked on.
                 </p>
 
             </div>
 
 
+            <div class="projects-grid">
 
-            <!-- CERTIFICATE 3 -->
 
-            <div class="certificate">
+                <div class="project-card">
 
-                <img
-                    src="certificate%20(2).jpg"
-                    alt="MyGov Quiz Certificate 3"
-                    onclick="openCertificate(this.src)"
-                >
+                    <div class="project-icon">
+                        🧮
+                    </div>
 
-                <h3>
-                    MyGov Quiz
-                </h3>
+                    <h3>
+                        Interactive Calculator
+                    </h3>
+
+                    <p>
+                        A responsive calculator built with
+                        HTML, CSS and JavaScript with a clean
+                        user interface.
+                    </p>
+
+                </div>
+
+
+                <div class="project-card">
+
+                    <div class="project-icon">
+                        🤖
+                    </div>
+
+                    <h3>
+                        Arduino Projects
+                    </h3>
+
+                    <p>
+                        Electronics and automation experiments
+                        using Arduino boards, sensors, motors
+                        and other components.
+                    </p>
+
+                </div>
+
+
+                <div class="project-card">
+
+                    <div class="project-icon">
+                        ✍️
+                    </div>
+
+                    <h3>
+                        XY Plotter
+                    </h3>
+
+                    <p>
+                        A handwriting and drawing machine project
+                        combining programming, electronics and
+                        mechanical movement.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- CALCULATOR -->
+
+        <section
+            id="calculator"
+            class="page"
+        >
+
+            <div class="page-header">
+
+                <h2>
+                    Calculator
+                </h2>
 
                 <p>
-                    Certificate 3
+                    An interactive project built for my portfolio.
                 </p>
 
             </div>
 
 
-        </div>
-
-    </section>
+            <div class="calculator">
 
 
+                <input
+                    type="text"
+                    id="display"
+                    readonly
+                >
 
-    <!-- ================= CERTIFICATE POPUP ================= -->
+
+                <div class="calculator-buttons">
+
+                    <button
+                        class="clear"
+                        onclick="clearDisplay()"
+                    >
+                        C
+                    </button>
+
+
+                    <button
+                        onclick="deleteLast()"
+                    >
+                        ⌫
+                    </button>
+
+
+                    <button
+                        onclick="appendValue('%')"
+                    >
+                        %
+                    </button>
+
+
+                    <button
+                        class="operator"
+                        onclick="appendValue('/')"
+                    >
+                        ÷
+                    </button>
+
+
+                    <button
+                        onclick="appendValue('7')"
+                    >
+                        7
+                    </button>
+
+
+                    <button
+                        onclick="appendValue('8')"
+                    >
+                        8
+                    </button>
+
+
+                    <button
+                        onclick="appendValue('9')"
+                    >
+                        9
+                    </button>
+
+
+                    <button
+                        class="operator"
+                        onclick="appendValue('*')"
+                    >
+                        ×
+                    </button>
+
+
+                    <button
+                        onclick="appendValue('4')"
+                    >
+                        4
+                    </button>
+
+
+                    <button
+                        onclick="appendValue('5')"
+                    >
+                        5
+                    </button>
+
+
+                    <button
+                        onclick="appendValue('6')"
+                    >
+                        6
+                    </button>
+
+
+                    <button
+                        class="operator"
+                        onclick="appendValue('-')"
+                    >
+                        −
+                    </button>
+
+
+                    <button
+                        onclick="appendValue('1')"
+                    >
+                        1
+                    </button>
+
+
+                    <button
+                        onclick="appendValue('2')"
+                    >
+                        2
+                    </button>
+
+
+                    <button
+                        onclick="appendValue('3')"
+                    >
+                        3
+                    </button>
+
+
+                    <button
+                        class="operator"
+                        onclick="appendValue('+')"
+                    >
+                        +
+                    </button>
+
+
+                    <button
+                        onclick="appendValue('0')"
+                    >
+                        0
+                    </button>
+
+
+                    <button
+                        onclick="appendValue('.')"
+                    >
+                        .
+                    </button>
+
+
+                    <button
+                        class="equals"
+                        onclick="calculate()"
+                    >
+                        =
+                    </button>
+
+
+                    <button
+                        class="operator"
+                        onclick="appendValue('**')"
+                    >
+                        ^
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ACHIEVEMENTS -->
+
+        <section
+            id="achievements"
+            class="page"
+        >
+
+            <div class="page-header">
+
+                <h2>
+                    Achievements
+                </h2>
+
+                <p>
+                    Certificates and participation.
+                </p>
+
+            </div>
+
+
+            <div class="achievements-grid">
+
+
+                <!-- CERTIFICATE 1 -->
+
+                <div class="certificate-card">
+
+                    <img
+                        src="certificate.jpg"
+                        alt="MyGov Quiz Certificate 1"
+                        onclick="openCertificate(this.src)"
+                    >
+
+
+                    <div class="certificate-info">
+
+                        <h3>
+                            MyGov Quiz
+                        </h3>
+
+                        <p>
+                            Certificate 1
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- CERTIFICATE 2 -->
+
+                <div class="certificate-card">
+
+                    <img
+                        src="certificate%20(1).jpg"
+                        alt="MyGov Quiz Certificate 2"
+                        onclick="openCertificate(this.src)"
+                    >
+
+
+                    <div class="certificate-info">
+
+                        <h3>
+                            MyGov Quiz
+                        </h3>
+
+                        <p>
+                            Certificate 2
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- CERTIFICATE 3 -->
+
+                <div class="certificate-card">
+
+                    <img
+                        src="certificate%20(2).jpg"
+                        alt="MyGov Quiz Certificate 3"
+                        onclick="openCertificate(this.src)"
+                    >
+
+
+                    <div class="certificate-info">
+
+                        <h3>
+                            MyGov Quiz
+                        </h3>
+
+                        <p>
+                            Certificate 3
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =========================
+         IMAGE VIEWER
+    ========================= -->
 
     <div
         class="modal"
@@ -939,7 +1412,7 @@
     >
 
         <span
-            class="close"
+            class="close-modal"
             onclick="closeCertificate()"
         >
             &times;
@@ -956,22 +1429,91 @@
 
 
 
-    <!-- ================= FOOTER ================= -->
+    <!-- =========================
+         FOOTER
+    ========================= -->
 
     <footer>
 
-        © 2026 Manoj | AI & Innovation Portfolio
+        © 2026 Manoj. Built with HTML, CSS & JavaScript.
 
     </footer>
 
 
 
-    <!-- ================= JAVASCRIPT ================= -->
+    <!-- =========================
+         JAVASCRIPT
+    ========================= -->
 
     <script>
 
 
-        /* ---------- CALCULATOR ---------- */
+        /* =========================
+           PAGE SWITCHING
+        ========================= */
+
+        function showPage(pageName) {
+
+            const pages =
+                document.querySelectorAll(".page");
+
+
+            pages.forEach(function(page) {
+
+                page.classList.remove("active");
+
+            });
+
+
+            const selectedPage =
+                document.getElementById(pageName);
+
+
+            if (selectedPage) {
+
+                selectedPage.classList.add("active");
+
+            }
+
+
+            const navButtons =
+                document.querySelectorAll("nav button");
+
+
+            navButtons.forEach(function(button) {
+
+                button.classList.remove("active");
+
+            });
+
+
+            const activeButton =
+                document.getElementById(
+                    "nav-" + pageName
+                );
+
+
+            if (activeButton) {
+
+                activeButton.classList.add("active");
+
+            }
+
+
+            window.scrollTo({
+
+                top: 0,
+
+                behavior: "smooth"
+
+            });
+
+        }
+
+
+        /* =========================
+           CALCULATOR
+        ========================= */
 
         const display =
             document.getElementById("display");
@@ -1003,9 +1545,12 @@
 
             try {
 
-                if (display.value === "") {
+                if (display.value.trim() === "") {
+
                     return;
+
                 }
+
 
                 display.value =
                     eval(display.value);
@@ -1014,26 +1559,36 @@
 
             catch {
 
-                display.value = "Error";
+                display.value =
+                    "Error";
 
             }
 
         }
 
 
-
-        /* ---------- CERTIFICATE POPUP ---------- */
+        /* =========================
+           CERTIFICATE VIEWER
+        ========================= */
 
         function openCertificate(image) {
 
-            document
-                .getElementById("certificateModal")
-                .style.display = "flex";
+            const modal =
+                document.getElementById(
+                    "certificateModal"
+                );
 
 
-            document
-                .getElementById("largeCertificate")
-                .src = image;
+            const largeImage =
+                document.getElementById(
+                    "largeCertificate"
+                );
+
+
+            largeImage.src = image;
+
+
+            modal.classList.add("show");
 
         }
 
@@ -1041,13 +1596,15 @@
         function closeCertificate() {
 
             document
-                .getElementById("certificateModal")
-                .style.display = "none";
+                .getElementById(
+                    "certificateModal"
+                )
+                .classList.remove("show");
 
         }
 
 
-        /* Close popup when clicking outside */
+        /* Close popup when clicking background */
 
         document
             .getElementById("certificateModal")
@@ -1055,7 +1612,9 @@
                 "click",
                 function(event) {
 
-                    if (event.target === this) {
+                    if (
+                        event.target === this
+                    ) {
 
                         closeCertificate();
 
@@ -1065,9 +1624,16 @@
             );
 
 
+        /* =========================
+           START WITH HOME
+        ========================= */
+
+        showPage("home");
+
     </script>
 
 
 </body>
+
 </html>
 ```
