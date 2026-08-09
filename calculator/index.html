@@ -1,84 +1,199 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Calculator | Global AI Study Companion</title>
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Calculator | Global AI Study Companion
+    </title>
+
 
     <style>
+
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
 
         body {
-            min-height: 100vh;
-            font-family: Arial, sans-serif;
-            background: #f1f1f1;
 
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
 
-            padding: 30px;
-        }
+            background:
+                linear-gradient(
+                    135deg,
+                    #eef1f5,
+                    #ffffff
+                );
 
-        .container {
-            width: 360px;
-        }
-
-        .back {
-            display: inline-block;
-            margin-bottom: 15px;
-
-            text-decoration: none;
             color: #111;
 
-            font-weight: bold;
+            min-height: 100vh;
+
+            padding: 30px;
+
+            transition:
+                background 0.3s,
+                color 0.3s;
         }
 
-        .calculator {
-            background: #181818;
-            padding: 20px;
 
-            border-radius: 20px;
+        /* =========================
+           TOP BAR
+        ========================= */
 
-            box-shadow:
-                0 20px 50px
-                rgba(0,0,0,0.25);
+        .top-bar {
+
+            max-width: 1100px;
+
+            margin: auto;
+
+            display: flex;
+
+            justify-content:
+                space-between;
+
+            align-items: center;
+
+            margin-bottom: 25px;
         }
 
-        .title {
-            color: white;
-            text-align: center;
 
-            margin-bottom: 15px;
+        .back {
+
+            text-decoration: none;
+
+            color: #111;
+
+            font-weight: 700;
+
+            padding: 10px 15px;
+
+            border-radius: 8px;
+
+            background: white;
+
+            border: 1px solid #ddd;
         }
 
-        #display {
-            width: 100%;
-            height: 80px;
+
+        .back:hover {
+
+            background: #eee;
+        }
+
+
+        .theme-button {
 
             border: none;
-            outline: none;
 
-            border-radius: 10px;
+            background: #111;
 
-            background: #080808;
             color: white;
 
-            font-size: 32px;
+            padding: 10px 14px;
+
+            border-radius: 8px;
+
+            cursor: pointer;
+
+            font-size: 16px;
+        }
+
+
+        /* =========================
+           MAIN LAYOUT
+        ========================= */
+
+        .layout {
+
+            max-width: 1100px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                1.2fr 0.8fr;
+
+            gap: 25px;
+
+            align-items: start;
+        }
+
+
+        /* =========================
+           CALCULATOR
+        ========================= */
+
+        .calculator {
+
+            background: #111;
+
+            padding: 22px;
+
+            border-radius: 22px;
+
+            box-shadow:
+                0 25px 60px
+                rgba(0, 0, 0, 0.2);
+        }
+
+
+        .calculator-title {
+
+            color: white;
+
+            text-align: center;
+
+            margin-bottom: 18px;
+        }
+
+
+        #display {
+
+            width: 100%;
+
+            height: 90px;
+
+            border: none;
+
+            outline: none;
+
+            border-radius: 12px;
+
+            background: #050505;
+
+            color: white;
+
+            font-size: 34px;
 
             text-align: right;
 
-            padding: 10px;
+            padding: 15px;
 
             margin-bottom: 15px;
         }
 
+
         .buttons {
+
             display: grid;
 
             grid-template-columns:
@@ -87,57 +202,356 @@
             gap: 10px;
         }
 
+
         button {
-            height: 60px;
+
+            height: 62px;
 
             border: none;
 
-            border-radius: 10px;
+            border-radius: 11px;
 
-            background: #3b3b3b;
+            background: #333;
 
             color: white;
 
-            font-size: 20px;
+            font-size: 19px;
 
             cursor: pointer;
+
+            transition:
+                transform 0.1s,
+                background 0.2s;
         }
 
+
         button:hover {
+
             background: #555;
         }
 
+
+        button:active {
+
+            transform: scale(0.94);
+        }
+
+
         .operator {
+
             background: #ff9500;
         }
 
+
+        .operator:hover {
+
+            background: #ffad32;
+        }
+
+
         .clear {
+
             background: #d9534f;
         }
 
+
         .equals {
+
             background: #28a745;
         }
 
+
         .zero {
-            grid-column: span 2;
+
+            grid-column:
+                span 2;
         }
+
+
+        /* =========================
+           SIDE PANEL
+        ========================= */
+
+        .side-panel {
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 20px;
+        }
+
+
+        .card {
+
+            background: white;
+
+            padding: 25px;
+
+            border-radius: 18px;
+
+            border: 1px solid #ddd;
+
+            box-shadow:
+                0 10px 30px
+                rgba(0, 0, 0, 0.06);
+        }
+
+
+        .card h2 {
+
+            margin-bottom: 12px;
+
+            font-size: 23px;
+        }
+
+
+        .card p {
+
+            color: #666;
+
+            margin-bottom: 8px;
+        }
+
+
+        .tech-list {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 8px;
+
+            margin-top: 15px;
+        }
+
+
+        .tech {
+
+            padding: 7px 10px;
+
+            background: #eee;
+
+            border-radius: 7px;
+
+            font-size: 13px;
+
+            font-weight: 700;
+        }
+
+
+        /* =========================
+           HISTORY
+        ========================= */
+
+        .history {
+
+            max-height: 220px;
+
+            overflow-y: auto;
+
+            margin-top: 10px;
+        }
+
+
+        .history-item {
+
+            padding: 10px;
+
+            border-bottom: 1px solid #eee;
+
+            font-size: 14px;
+        }
+
+
+        .history-empty {
+
+            color: #999;
+
+            font-size: 14px;
+        }
+
+
+        .clear-history {
+
+            margin-top: 12px;
+
+            height: 40px;
+
+            width: 100%;
+
+            background: #eee;
+
+            color: #111;
+
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        .footer {
+
+            max-width: 1100px;
+
+            margin: 35px auto 0;
+
+            text-align: center;
+
+            color: #777;
+
+            font-size: 13px;
+        }
+
+
+        /* =========================
+           DARK MODE
+        ========================= */
+
+        body.dark {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #101010,
+                    #1b1b1b
+                );
+
+            color: white;
+        }
+
+
+        body.dark .back {
+
+            background: #222;
+
+            color: white;
+
+            border-color: #444;
+        }
+
+
+        body.dark .card {
+
+            background: #202020;
+
+            border-color: #333;
+        }
+
+
+        body.dark .card p {
+
+            color: #aaa;
+        }
+
+
+        body.dark .tech {
+
+            background: #333;
+
+            color: white;
+        }
+
+
+        body.dark .history-item {
+
+            border-color: #333;
+        }
+
+
+        body.dark .clear-history {
+
+            background: #333;
+
+            color: white;
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 800px) {
+
+            body {
+
+                padding: 15px;
+            }
+
+
+            .layout {
+
+                grid-template-columns: 1fr;
+            }
+
+
+            .top-bar {
+
+                margin-bottom: 15px;
+            }
+
+
+            #display {
+
+                font-size: 28px;
+            }
+
+        }
+
     </style>
+
 </head>
+
 
 <body>
 
-<div class="container">
 
-    <a href="../index.html" class="back">
-        ← Back to Global AI Study Companion
+<!-- =========================
+     TOP BAR
+========================= -->
+
+<div class="top-bar">
+
+    <a
+        href="../index.html"
+        class="back">
+
+        ← Back to Portfolio
+
     </a>
+
+
+    <button
+        class="theme-button"
+        onclick="toggleTheme()">
+
+        🌙
+
+    </button>
+
+</div>
+
+
+
+<!-- =========================
+     MAIN
+========================= -->
+
+<div class="layout">
+
+
+    <!-- CALCULATOR -->
 
     <div class="calculator">
 
-        <h2 class="title">
-            🧮 Calculator
+        <h2 class="calculator-title">
+
+            🧮 Smart Calculator
+
         </h2>
+
 
         <input
             type="text"
@@ -145,28 +559,41 @@
             readonly
         >
 
+
         <div class="buttons">
+
 
             <button
                 class="clear"
                 onclick="clearDisplay()">
+
                 AC
+
             </button>
+
 
             <button
                 onclick="deleteLast()">
+
                 DEL
+
             </button>
+
 
             <button
                 onclick="appendValue('%')">
+
                 %
+
             </button>
+
 
             <button
                 class="operator"
                 onclick="appendValue('/')">
+
                 ÷
+
             </button>
 
 
@@ -174,18 +601,23 @@
                 7
             </button>
 
+
             <button onclick="appendValue('8')">
                 8
             </button>
+
 
             <button onclick="appendValue('9')">
                 9
             </button>
 
+
             <button
                 class="operator"
                 onclick="appendValue('*')">
+
                 ×
+
             </button>
 
 
@@ -193,18 +625,23 @@
                 4
             </button>
 
+
             <button onclick="appendValue('5')">
                 5
             </button>
+
 
             <button onclick="appendValue('6')">
                 6
             </button>
 
+
             <button
                 class="operator"
                 onclick="appendValue('-')">
+
                 −
+
             </button>
 
 
@@ -212,48 +649,204 @@
                 1
             </button>
 
+
             <button onclick="appendValue('2')">
                 2
             </button>
+
 
             <button onclick="appendValue('3')">
                 3
             </button>
 
+
             <button
                 class="operator"
                 onclick="appendValue('+')">
+
                 +
+
             </button>
 
 
             <button
                 class="zero"
                 onclick="appendValue('0')">
+
                 0
+
             </button>
 
+
             <button onclick="appendValue('.')">
+
                 .
+
             </button>
+
 
             <button
                 class="equals"
                 onclick="calculate()">
+
                 =
+
+            </button>
+
+
+        </div>
+
+    </div>
+
+
+
+    <!-- SIDE PANEL -->
+
+    <div class="side-panel">
+
+
+        <!-- PROJECT INFORMATION -->
+
+        <div class="card">
+
+            <h2>
+                About This Project
+            </h2>
+
+            <p>
+                This calculator is a responsive
+                web application created as part
+                of my technology portfolio.
+            </p>
+
+            <p>
+                It supports basic arithmetic,
+                percentage calculations and
+                keyboard controls.
+            </p>
+
+
+            <div class="tech-list">
+
+                <span class="tech">
+                    HTML
+                </span>
+
+                <span class="tech">
+                    CSS
+                </span>
+
+                <span class="tech">
+                    JavaScript
+                </span>
+
+                <span class="tech">
+                    Responsive Design
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- HISTORY -->
+
+        <div class="card">
+
+            <h2>
+                Calculation History
+            </h2>
+
+
+            <div
+                id="history"
+                class="history">
+
+                <p class="history-empty">
+
+                    No calculations yet.
+
+                </p>
+
+            </div>
+
+
+            <button
+                class="clear-history"
+                onclick="clearHistory()">
+
+                Clear History
+
             </button>
 
         </div>
+
+
+        <!-- FEATURES -->
+
+        <div class="card">
+
+            <h2>
+                Features
+            </h2>
+
+            <p>
+                ✓ Basic arithmetic
+            </p>
+
+            <p>
+                ✓ Percentage calculations
+            </p>
+
+            <p>
+                ✓ Keyboard support
+            </p>
+
+            <p>
+                ✓ Calculation history
+            </p>
+
+            <p>
+                ✓ Dark / light mode
+            </p>
+
+            <p>
+                ✓ Mobile responsive
+            </p>
+
+        </div>
+
 
     </div>
 
 </div>
 
 
+
+<div class="footer">
+
+    Global AI Study Companion •
+    Calculator Project
+
+</div>
+
+
+
 <script>
+
 
 const display =
     document.getElementById("display");
+
+
+const history =
+    document.getElementById("history");
+
+
+
+/* =========================
+   CALCULATOR
+========================= */
 
 
 function appendValue(value) {
@@ -263,11 +856,13 @@ function appendValue(value) {
 }
 
 
+
 function clearDisplay() {
 
     display.value = "";
 
 }
+
 
 
 function deleteLast() {
@@ -278,28 +873,40 @@ function deleteLast() {
 }
 
 
+
 function calculate() {
+
+    if (display.value === "") {
+
+        return;
+
+    }
+
 
     try {
 
-        if (display.value === "") {
-            return;
-        }
+        const original =
+            display.value;
 
-        let expression =
+
+        const expression =
             display.value.replace(
                 /%/g,
                 "/100"
             );
 
-        let result =
+
+        const result =
             Function(
                 '"use strict"; return (' +
                 expression +
-                ")"
+                ')'
             )();
 
-        if (!Number.isFinite(result)) {
+
+        if (
+            !Number.isFinite(result)
+        ) {
 
             display.value = "Error";
 
@@ -307,11 +914,20 @@ function calculate() {
 
         }
 
+
         display.value = result;
+
+
+        addHistory(
+            original +
+            " = " +
+            result
+        );
 
     }
 
-    catch (error) {
+
+    catch {
 
         display.value = "Error";
 
@@ -320,20 +936,137 @@ function calculate() {
 }
 
 
+
+/* =========================
+   HISTORY
+========================= */
+
+
+function addHistory(text) {
+
+    const empty =
+        history.querySelector(
+            ".history-empty"
+        );
+
+
+    if (empty) {
+
+        empty.remove();
+
+    }
+
+
+    const item =
+        document.createElement("div");
+
+
+    item.className =
+        "history-item";
+
+
+    item.textContent =
+        text;
+
+
+    history.prepend(item);
+
+}
+
+
+
+function clearHistory() {
+
+    history.innerHTML =
+
+        '<p class="history-empty">' +
+        'No calculations yet.' +
+        '</p>';
+
+}
+
+
+
+/* =========================
+   DARK MODE
+========================= */
+
+
+function toggleTheme() {
+
+    document.body.classList.toggle(
+        "dark"
+    );
+
+
+    const button =
+        document.querySelector(
+            ".theme-button"
+        );
+
+
+    if (
+        document.body.classList.contains(
+            "dark"
+        )
+    ) {
+
+        button.textContent = "☀️";
+
+    }
+
+    else {
+
+        button.textContent = "🌙";
+
+    }
+
+}
+
+
+
+/* =========================
+   KEYBOARD
+========================= */
+
+
 document.addEventListener(
     "keydown",
     function(event) {
 
-        const key = event.key;
+        const key =
+            event.key;
+
 
         if (
-            (key >= "0" && key <= "9") ||
-            key === "+" ||
-            key === "-" ||
-            key === "*" ||
-            key === "/" ||
-            key === "." ||
+
+            (key >= "0" &&
+             key <= "9")
+
+            ||
+
+            key === "+"
+
+            ||
+
+            key === "-"
+
+            ||
+
+            key === "*"
+
+            ||
+
+            key === "/"
+
+            ||
+
+            key === "."
+
+            ||
+
             key === "%"
+
         ) {
 
             appendValue(key);
@@ -342,8 +1075,13 @@ document.addEventListener(
 
 
         if (
-            key === "Enter" ||
+
+            key === "Enter"
+
+            ||
+
             key === "="
+
         ) {
 
             calculate();
@@ -351,14 +1089,18 @@ document.addEventListener(
         }
 
 
-        if (key === "Backspace") {
+        if (
+            key === "Backspace"
+        ) {
 
             deleteLast();
 
         }
 
 
-        if (key === "Escape") {
+        if (
+            key === "Escape"
+        ) {
 
             clearDisplay();
 
@@ -367,7 +1109,10 @@ document.addEventListener(
     }
 );
 
+
 </script>
 
+
 </body>
+
 </html>
