@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Manoj | AI & Innovation Portfolio</title>
+    <title>Manoj | AI & Innovation</title>
 
     <style>
         * {
@@ -16,62 +16,85 @@
         }
 
         body {
-            font-family: Arial, Helvetica, sans-serif;
+            font-family: Arial, sans-serif;
             background: #0b1020;
             color: white;
-            line-height: 1.6;
         }
 
-        /* NAVBAR */
+        /* ================= NAVBAR ================= */
+
         nav {
             position: sticky;
             top: 0;
             z-index: 1000;
-            background: rgba(11, 16, 32, 0.95);
-            padding: 18px 8%;
+
+            background: #080d1a;
+
+            padding: 18px 7%;
+
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid #27304a;
+
+            border-bottom: 1px solid #26304a;
         }
 
         .logo {
-            font-size: 24px;
+            font-size: 25px;
             font-weight: bold;
             color: #66e3ff;
         }
 
         nav ul {
-            list-style: none;
             display: flex;
+            list-style: none;
             gap: 25px;
         }
 
-        nav ul li a {
+        nav a {
             color: white;
             text-decoration: none;
             font-size: 15px;
-            transition: 0.3s;
+            cursor: pointer;
         }
 
-        nav ul li a:hover {
+        nav a:hover {
             color: #66e3ff;
         }
 
-        /* SECTIONS */
+
+        /* ================= COMMON ================= */
+
         section {
             padding: 80px 8%;
-            min-height: 50vh;
         }
 
-        /* HOME */
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 12px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #9ca8c4;
+            margin-bottom: 40px;
+        }
+
+
+        /* ================= HOME ================= */
+
         #home {
             min-height: 90vh;
+
             display: flex;
-            align-items: center;
             justify-content: center;
+            align-items: center;
+
             text-align: center;
-            background: linear-gradient(135deg, #0b1020, #111a35);
+
+            background:
+                radial-gradient(circle at top, #172342, #0b1020 60%);
         }
 
         .hero h1 {
@@ -86,29 +109,38 @@
         .hero p {
             max-width: 700px;
             margin: auto;
-            color: #b8c0d9;
+
+            color: #b9c3d9;
+
             font-size: 18px;
         }
 
-        .hero-buttons {
+        .buttons {
             margin-top: 30px;
         }
 
         .btn {
             display: inline-block;
-            padding: 12px 24px;
-            margin: 6px;
+
+            padding: 12px 25px;
+
+            margin: 5px;
+
             border-radius: 30px;
-            text-decoration: none;
-            font-weight: bold;
+
             background: #66e3ff;
-            color: #07101f;
-            transition: 0.3s;
+
+            color: #07101b;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+            cursor: pointer;
         }
 
         .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(102, 227, 255, 0.25);
+            transform: translateY(-2px);
         }
 
         .btn-outline {
@@ -117,216 +149,306 @@
             border: 1px solid #66e3ff;
         }
 
-        /* GENERAL */
-        .section-title {
-            text-align: center;
-            font-size: 35px;
-            margin-bottom: 15px;
-        }
 
-        .section-subtitle {
-            text-align: center;
-            color: #9da7c2;
-            margin-bottom: 45px;
-        }
+        /* ================= ABOUT ================= */
 
-        /* ABOUT */
         .about-box {
             max-width: 900px;
             margin: auto;
+
             background: #121a30;
+
             padding: 30px;
+
             border-radius: 18px;
+
             border: 1px solid #27304a;
         }
 
         .about-box p {
-            color: #c7cee0;
+            color: #c2cbe0;
             margin-bottom: 15px;
         }
 
-        /* PROJECTS */
-        .projects-grid {
+
+        /* ================= PROJECTS ================= */
+
+        .projects {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(250px, 1fr));
+
             gap: 25px;
         }
 
-        .project-card {
+        .project {
             background: #121a30;
-            border: 1px solid #27304a;
+
             padding: 25px;
+
             border-radius: 18px;
+
+            border: 1px solid #27304a;
+
             transition: 0.3s;
         }
 
-        .project-card:hover {
+        .project:hover {
             transform: translateY(-7px);
             border-color: #66e3ff;
         }
 
-        .project-card h3 {
+        .project h3 {
             color: #66e3ff;
             margin-bottom: 10px;
         }
 
-        .project-card p {
-            color: #aeb7ce;
+        .project p {
+            color: #aeb8ce;
         }
 
-        /* CALCULATOR */
-        .calculator-container {
+
+        /* ================= CALCULATOR ================= */
+
+        .calculator {
             max-width: 400px;
+
             margin: auto;
+
             background: #121a30;
+
             padding: 25px;
+
             border-radius: 20px;
+
             border: 1px solid #27304a;
         }
 
         #display {
             width: 100%;
+
             height: 70px;
-            background: #080d1a;
-            border: 1px solid #27304a;
-            border-radius: 12px;
-            color: white;
-            font-size: 28px;
-            text-align: right;
-            padding: 10px;
+
             margin-bottom: 15px;
+
+            padding: 10px;
+
+            background: #080d1a;
+
+            color: white;
+
+            border: 1px solid #27304a;
+
+            border-radius: 12px;
+
+            font-size: 28px;
+
+            text-align: right;
         }
 
         .calculator-buttons {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
             gap: 10px;
         }
 
         .calculator-buttons button {
             height: 60px;
+
             border: none;
+
             border-radius: 12px;
+
             background: #202a45;
+
             color: white;
+
             font-size: 20px;
+
             cursor: pointer;
-            transition: 0.2s;
         }
 
         .calculator-buttons button:hover {
-            background: #30405f;
+            background: #344463;
         }
 
-        .calculator-buttons .operator {
-            color: #66e3ff;
+        .operator {
+            color: #66e3ff !important;
         }
 
-        .calculator-buttons .equals {
-            background: #66e3ff;
-            color: #07101f;
+        .equals {
+            background: #66e3ff !important;
+            color: #07101b !important;
         }
 
-        .calculator-buttons .clear {
-            color: #ff7b7b;
+        .clear {
+            color: #ff7777 !important;
         }
 
-        /* ACHIEVEMENTS */
+
+        /* ================= ACHIEVEMENTS ================= */
+
+        /*
+           IMPORTANT:
+           Achievements is HIDDEN when the website opens.
+        */
+
         #achievements {
+            display: none;
+
             background: #0e1528;
+
+            min-height: 100vh;
+        }
+
+        /*
+           When the URL contains #achievements,
+           the section becomes visible.
+        */
+
+        #achievements:target {
+            display: block;
         }
 
         .achievements-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
             max-width: 1100px;
+
             margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(280px, 1fr));
+
+            gap: 25px;
         }
 
-        .certificate-card {
+        .certificate {
             background: #121a30;
-            border: 1px solid #27304a;
-            border-radius: 18px;
+
             padding: 15px;
+
+            border-radius: 18px;
+
+            border: 1px solid #27304a;
+
             text-align: center;
+
             transition: 0.3s;
         }
 
-        .certificate-card:hover {
+        .certificate:hover {
             transform: translateY(-7px);
+
             border-color: #66e3ff;
         }
 
-        .certificate-card img {
+        .certificate img {
             width: 100%;
-            height: 230px;
+
+            height: 240px;
+
             object-fit: contain;
+
             background: white;
+
             border-radius: 10px;
+
             cursor: pointer;
         }
 
-        .certificate-card h3 {
+        .certificate h3 {
             margin-top: 15px;
+
             color: #66e3ff;
         }
 
-        .certificate-card p {
-            color: #9da7c2;
-            font-size: 14px;
+        .certificate p {
+            color: #9da8c2;
+
+            margin-top: 5px;
         }
 
-        /* IMAGE POPUP */
+
+        /* ================= IMAGE POPUP ================= */
+
         .modal {
             display: none;
+
             position: fixed;
-            z-index: 2000;
+
+            z-index: 5000;
+
             left: 0;
             top: 0;
+
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.9);
+
+            background: rgba(0,0,0,0.92);
+
             justify-content: center;
+
             align-items: center;
+
             padding: 30px;
         }
 
         .modal img {
             max-width: 95%;
             max-height: 90%;
+
             border-radius: 10px;
         }
 
         .close {
             position: absolute;
-            top: 20px;
-            right: 35px;
-            color: white;
+
+            top: 15px;
+            right: 30px;
+
             font-size: 45px;
+
+            color: white;
+
             cursor: pointer;
         }
 
-        /* FOOTER */
+
+        /* ================= FOOTER ================= */
+
         footer {
             text-align: center;
+
             padding: 25px;
+
             background: #080d1a;
-            color: #7f89a5;
+
+            color: #7f8aa5;
+
             border-top: 1px solid #27304a;
         }
 
-        /* MOBILE */
+
+        /* ================= MOBILE ================= */
+
         @media (max-width: 700px) {
 
             nav {
                 flex-direction: column;
-                gap: 12px;
+
+                gap: 15px;
             }
 
             nav ul {
                 gap: 12px;
+
                 flex-wrap: wrap;
+
                 justify-content: center;
             }
 
@@ -338,44 +460,99 @@
                 padding: 60px 5%;
             }
         }
+
     </style>
 </head>
 
+
 <body>
 
-    <!-- NAVIGATION -->
+
+    <!-- ================= NAVIGATION ================= -->
+
     <nav>
-        <div class="logo">Manoj</div>
+
+        <div class="logo">
+            Manoj
+        </div>
 
         <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#calculator">Calculator</a></li>
-            <li><a href="#achievements">Achievements</a></li>
+
+            <li>
+                <a href="#home">
+                    Home
+                </a>
+            </li>
+
+            <li>
+                <a href="#about">
+                    About
+                </a>
+            </li>
+
+            <li>
+                <a href="#projects">
+                    Projects
+                </a>
+            </li>
+
+            <li>
+                <a href="#calculator">
+                    Calculator
+                </a>
+            </li>
+
+            <li>
+                <a href="#achievements">
+                    🏆 Achievements
+                </a>
+            </li>
+
         </ul>
+
     </nav>
 
 
-    <!-- HOME -->
+
+    <!-- ================= HOME ================= -->
+
     <section id="home">
 
         <div class="hero">
 
-            <h1>Hi, I'm <span>Manoj</span></h1>
+            <h1>
+                Hi, I'm
+                <span>Manoj</span>
+            </h1>
 
             <p>
-                Student, designer, programmer and young innovator
-                interested in Artificial Intelligence, Computer Science,
-                Embedded Systems and new technology.
+                Student • Designer • Programmer • Young Innovator
             </p>
 
-            <div class="hero-buttons">
-                <a href="#projects" class="btn">View Projects</a>
+            <p>
+                Interested in Artificial Intelligence,
+                Computer Science, Embedded Systems,
+                Programming and Innovation.
+            </p>
 
-                <a href="#achievements" class="btn btn-outline">
-                    View Achievements
+
+            <div class="buttons">
+
+                <a
+                    href="#projects"
+                    class="btn"
+                >
+                    View Projects
                 </a>
+
+
+                <a
+                    href="#achievements"
+                    class="btn btn-outline"
+                >
+                    🏆 My Achievements
+                </a>
+
             </div>
 
         </div>
@@ -383,31 +560,37 @@
     </section>
 
 
-    <!-- ABOUT -->
+
+    <!-- ================= ABOUT ================= -->
+
     <section id="about">
 
-        <h2 class="section-title">About Me</h2>
+        <h2 class="section-title">
+            About Me
+        </h2>
 
         <p class="section-subtitle">
-            A little about my journey
+            My journey and interests
         </p>
+
 
         <div class="about-box">
 
             <p>
-                I am a student passionate about technology, innovation,
-                programming and design.
+                I am a student passionate about technology,
+                programming, electronics, artificial intelligence
+                and creative design.
             </p>
 
             <p>
                 I enjoy building practical projects using Arduino,
-                electronics, programming and artificial intelligence.
+                sensors, programming and different technologies.
             </p>
 
             <p>
-                My goal is to continue learning Computer Science and
-                Artificial Intelligence and create useful technology
-                that can solve real-world problems.
+                My goal is to study Computer Science and
+                Artificial Intelligence and create useful
+                solutions for real-world problems.
             </p>
 
         </div>
@@ -415,101 +598,243 @@
     </section>
 
 
-    <!-- PROJECTS -->
+
+    <!-- ================= PROJECTS ================= -->
+
     <section id="projects">
 
-        <h2 class="section-title">Projects</h2>
+        <h2 class="section-title">
+            Projects
+        </h2>
 
         <p class="section-subtitle">
-            Some of the things I have built
+            Things I have built and explored
         </p>
 
-        <div class="projects-grid">
 
-            <div class="project-card">
+        <div class="projects">
 
-                <h3>🧮 Smart Calculator</h3>
+
+            <div class="project">
+
+                <h3>
+                    🧮 Interactive Calculator
+                </h3>
 
                 <p>
-                    An interactive web calculator designed and built
-                    using HTML, CSS and JavaScript.
+                    A modern web calculator created using
+                    HTML, CSS and JavaScript.
                 </p>
 
             </div>
 
 
-            <div class="project-card">
+            <div class="project">
 
-                <h3>🤖 Arduino Projects</h3>
+                <h3>
+                    🤖 Arduino Projects
+                </h3>
 
                 <p>
-                    Electronics and automation projects created using
-                    Arduino and different sensors.
+                    Electronics and automation projects
+                    using Arduino, sensors and motors.
                 </p>
 
             </div>
 
 
-            <div class="project-card">
+            <div class="project">
 
-                <h3>✍️ XY Plotter</h3>
+                <h3>
+                    ✍️ XY Plotter
+                </h3>
 
                 <p>
-                    A handwriting and drawing machine project based on
-                    motors, Arduino and mechanical movement.
+                    A handwriting and drawing machine
+                    based on Arduino and motor control.
                 </p>
 
             </div>
+
 
         </div>
 
     </section>
 
 
-    <!-- CALCULATOR -->
+
+    <!-- ================= CALCULATOR ================= -->
+
     <section id="calculator">
 
-        <h2 class="section-title">Interactive Calculator</h2>
+        <h2 class="section-title">
+            🧮 Interactive Calculator
+        </h2>
 
         <p class="section-subtitle">
-            Try my calculator
+            Try it yourself
         </p>
 
-        <div class="calculator-container">
+
+        <div class="calculator">
+
 
             <input
-                type="text"
                 id="display"
-                value=""
+                type="text"
                 readonly
             >
 
+
             <div class="calculator-buttons">
 
-                <button class="clear" onclick="clearDisplay()">C</button>
-                <button onclick="deleteLast()">⌫</button>
-                <button onclick="appendValue('%')">%</button>
-                <button class="operator" onclick="appendValue('/')">÷</button>
 
-                <button onclick="appendValue('7')">7</button>
-                <button onclick="appendValue('8')">8</button>
-                <button onclick="appendValue('9')">9</button>
-                <button class="operator" onclick="appendValue('*')">×</button>
+                <button
+                    class="clear"
+                    onclick="clearDisplay()"
+                >
+                    C
+                </button>
 
-                <button onclick="appendValue('4')">4</button>
-                <button onclick="appendValue('5')">5</button>
-                <button onclick="appendValue('6')">6</button>
-                <button class="operator" onclick="appendValue('-')">−</button>
 
-                <button onclick="appendValue('1')">1</button>
-                <button onclick="appendValue('2')">2</button>
-                <button onclick="appendValue('3')">3</button>
-                <button class="operator" onclick="appendValue('+')">+</button>
+                <button
+                    onclick="deleteLast()"
+                >
+                    ⌫
+                </button>
 
-                <button onclick="appendValue('0')">0</button>
-                <button onclick="appendValue('.')">.</button>
-                <button class="equals" onclick="calculate()">=</button>
-                <button class="operator" onclick="appendValue('**')">^</button>
+
+                <button
+                    onclick="appendValue('%')"
+                >
+                    %
+                </button>
+
+
+                <button
+                    class="operator"
+                    onclick="appendValue('/')"
+                >
+                    ÷
+                </button>
+
+
+                <button
+                    onclick="appendValue('7')"
+                >
+                    7
+                </button>
+
+
+                <button
+                    onclick="appendValue('8')"
+                >
+                    8
+                </button>
+
+
+                <button
+                    onclick="appendValue('9')"
+                >
+                    9
+                </button>
+
+
+                <button
+                    class="operator"
+                    onclick="appendValue('*')"
+                >
+                    ×
+                </button>
+
+
+                <button
+                    onclick="appendValue('4')"
+                >
+                    4
+                </button>
+
+
+                <button
+                    onclick="appendValue('5')"
+                >
+                    5
+                </button>
+
+
+                <button
+                    onclick="appendValue('6')"
+                >
+                    6
+                </button>
+
+
+                <button
+                    class="operator"
+                    onclick="appendValue('-')"
+                >
+                    −
+                </button>
+
+
+                <button
+                    onclick="appendValue('1')"
+                >
+                    1
+                </button>
+
+
+                <button
+                    onclick="appendValue('2')"
+                >
+                    2
+                </button>
+
+
+                <button
+                    onclick="appendValue('3')"
+                >
+                    3
+                </button>
+
+
+                <button
+                    class="operator"
+                    onclick="appendValue('+')"
+                >
+                    +
+                </button>
+
+
+                <button
+                    onclick="appendValue('0')"
+                >
+                    0
+                </button>
+
+
+                <button
+                    onclick="appendValue('.')"
+                >
+                    .
+                </button>
+
+
+                <button
+                    class="equals"
+                    onclick="calculate()"
+                >
+                    =
+                </button>
+
+
+                <button
+                    class="operator"
+                    onclick="appendValue('**')"
+                >
+                    ^
+                </button>
+
 
             </div>
 
@@ -518,82 +843,121 @@
     </section>
 
 
-    <!-- ACHIEVEMENTS -->
+
+    <!-- ================= ACHIEVEMENTS ================= -->
+
     <section id="achievements">
 
-        <h2 class="section-title">🏆 Achievements</h2>
+        <h2 class="section-title">
+            🏆 My Achievements
+        </h2>
 
         <p class="section-subtitle">
-            Certificates and achievements
+            My certificates and participation
         </p>
+
 
         <div class="achievements-grid">
 
+
             <!-- CERTIFICATE 1 -->
-            <div class="certificate-card">
+
+            <div class="certificate">
 
                 <img
                     src="certificate.jpg"
-                    alt="MyGov Quiz Certificate"
+                    alt="MyGov Quiz Certificate 1"
                     onclick="openCertificate(this.src)"
                 >
 
-                <h3>MyGov Quiz Certificate</h3>
+                <h3>
+                    MyGov Quiz
+                </h3>
 
-                <p>Certificate 1</p>
+                <p>
+                    Certificate 1
+                </p>
 
             </div>
+
 
 
             <!-- CERTIFICATE 2 -->
-            <div class="certificate-card">
+
+            <div class="certificate">
 
                 <img
                     src="certificate%20(1).jpg"
-                    alt="MyGov Quiz Certificate"
+                    alt="MyGov Quiz Certificate 2"
                     onclick="openCertificate(this.src)"
                 >
 
-                <h3>MyGov Quiz Certificate</h3>
+                <h3>
+                    MyGov Quiz
+                </h3>
 
-                <p>Certificate 2</p>
+                <p>
+                    Certificate 2
+                </p>
 
             </div>
+
 
 
             <!-- CERTIFICATE 3 -->
-            <div class="certificate-card">
+
+            <div class="certificate">
 
                 <img
                     src="certificate%20(2).jpg"
-                    alt="MyGov Quiz Certificate"
+                    alt="MyGov Quiz Certificate 3"
                     onclick="openCertificate(this.src)"
                 >
 
-                <h3>MyGov Quiz Certificate</h3>
+                <h3>
+                    MyGov Quiz
+                </h3>
 
-                <p>Certificate 3</p>
+                <p>
+                    Certificate 3
+                </p>
 
             </div>
+
 
         </div>
 
     </section>
 
 
-    <!-- CERTIFICATE POPUP -->
-    <div class="modal" id="certificateModal">
 
-        <span class="close" onclick="closeCertificate()">
+    <!-- ================= CERTIFICATE POPUP ================= -->
+
+    <div
+        class="modal"
+        id="certificateModal"
+    >
+
+        <span
+            class="close"
+            onclick="closeCertificate()"
+        >
             &times;
         </span>
 
-        <img id="largeCertificate" src="" alt="Certificate">
+
+        <img
+            id="largeCertificate"
+            src=""
+            alt="Certificate"
+        >
 
     </div>
 
 
-    <!-- FOOTER -->
+
+    <!-- ================= FOOTER ================= -->
+
     <footer>
 
         © 2026 Manoj | AI & Innovation Portfolio
@@ -601,12 +965,17 @@
     </footer>
 
 
-    <!-- JAVASCRIPT -->
+
+    <!-- ================= JAVASCRIPT ================= -->
+
     <script>
 
-        /* CALCULATOR */
 
-        const display = document.getElementById("display");
+        /* ---------- CALCULATOR ---------- */
+
+        const display =
+            document.getElementById("display");
+
 
         function appendValue(value) {
 
@@ -614,29 +983,36 @@
 
         }
 
+
         function clearDisplay() {
 
             display.value = "";
 
         }
 
+
         function deleteLast() {
 
-            display.value = display.value.slice(0, -1);
+            display.value =
+                display.value.slice(0, -1);
 
         }
+
 
         function calculate() {
 
             try {
 
-                if (display.value.trim() === "") {
+                if (display.value === "") {
                     return;
                 }
 
-                display.value = eval(display.value);
+                display.value =
+                    eval(display.value);
 
-            } catch (error) {
+            }
+
+            catch {
 
                 display.value = "Error";
 
@@ -645,41 +1021,53 @@
         }
 
 
-        /* CERTIFICATE POPUP */
 
-        function openCertificate(imageSource) {
+        /* ---------- CERTIFICATE POPUP ---------- */
 
-            document.getElementById("certificateModal").style.display = "flex";
+        function openCertificate(image) {
 
-            document.getElementById("largeCertificate").src = imageSource;
+            document
+                .getElementById("certificateModal")
+                .style.display = "flex";
+
+
+            document
+                .getElementById("largeCertificate")
+                .src = image;
 
         }
+
 
         function closeCertificate() {
 
-            document.getElementById("certificateModal").style.display = "none";
+            document
+                .getElementById("certificateModal")
+                .style.display = "none";
 
         }
 
 
-        /* CLOSE POPUP WHEN CLICKING OUTSIDE IMAGE */
+        /* Close popup when clicking outside */
 
-        document.getElementById("certificateModal").addEventListener(
-            "click",
-            function(event) {
+        document
+            .getElementById("certificateModal")
+            .addEventListener(
+                "click",
+                function(event) {
 
-                if (event.target === this) {
+                    if (event.target === this) {
 
-                    closeCertificate();
+                        closeCertificate();
+
+                    }
 
                 }
+            );
 
-            }
-        );
 
     </script>
+
 
 </body>
 </html>
 ```
-
