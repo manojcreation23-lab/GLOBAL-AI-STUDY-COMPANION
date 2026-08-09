@@ -1,67 +1,446 @@
 ```html
-<!DOCTYPE html>
-<html lang="en">
+<!-- =========================
+     PROFESSIONAL HOME
+========================= -->
 
-<head>
+<section
+    id="home"
+    class="page active"
+>
 
-<meta charset="UTF-8">
+    <div class="home-container">
 
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+        <!-- HERO -->
 
-<title>Manoj | Portfolio</title>
+        <div class="hero">
+
+            <div class="small-title">
+                STUDENT • DESIGNER • INNOVATOR
+            </div>
+
+            <h1>
+                Building ideas into
+                <span>technology.</span>
+            </h1>
+
+            <p>
+                I'm Manoj — a student exploring Computer Science,
+                Artificial Intelligence, programming, electronics
+                and creative innovation.
+            </p>
+
+            <div class="hero-buttons">
+
+                <button
+                    class="primary-btn"
+                    onclick="showPage('work')"
+                >
+                    Explore My Work
+                </button>
+
+                <button
+                    class="secondary-btn"
+                    onclick="showPage('achievements')"
+                >
+                    View Achievements
+                </button>
+
+            </div>
+
+        </div>
 
 
-<style>
+        <!-- QUICK INTRO -->
 
+        <div class="home-intro">
+
+            <div>
+                <span class="label">
+                    WHO I AM
+                </span>
+
+                <h2>
+                    Learning by building.
+                </h2>
+            </div>
+
+            <p>
+                I believe the best way to understand technology
+                is to create something with it. From programming
+                experiments to electronics projects, I enjoy
+                turning ideas into practical solutions.
+            </p>
+
+        </div>
+
+
+        <!-- INTERESTS -->
+
+        <div class="home-section">
+
+            <div class="home-heading">
+
+                <span class="label">
+                    MY INTERESTS
+                </span>
+
+                <h2>
+                    Areas I'm exploring
+                </h2>
+
+            </div>
+
+
+            <div class="interest-grid">
+
+
+                <div class="interest-card">
+
+                    <div class="interest-number">
+                        01
+                    </div>
+
+                    <h3>
+                        Artificial Intelligence
+                    </h3>
+
+                    <p>
+                        Exploring AI, machine learning and
+                        intelligent systems.
+                    </p>
+
+                </div>
+
+
+                <div class="interest-card">
+
+                    <div class="interest-number">
+                        02
+                    </div>
+
+                    <h3>
+                        Computer Science
+                    </h3>
+
+                    <p>
+                        Learning programming, software development
+                        and problem solving.
+                    </p>
+
+                </div>
+
+
+                <div class="interest-card">
+
+                    <div class="interest-number">
+                        03
+                    </div>
+
+                    <h3>
+                        Electronics
+                    </h3>
+
+                    <p>
+                        Building Arduino-based systems,
+                        automation and embedded projects.
+                    </p>
+
+                </div>
+
+
+                <div class="interest-card">
+
+                    <div class="interest-number">
+                        04
+                    </div>
+
+                    <h3>
+                        Innovation
+                    </h3>
+
+                    <p>
+                        Turning creative ideas into useful
+                        real-world solutions.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+        <!-- CURRENTLY BUILDING -->
+
+        <div class="building-card">
+
+            <div>
+
+                <span class="label">
+                    CURRENTLY BUILDING
+                </span>
+
+                <h2>
+                    Interactive Calculator
+                </h2>
+
+                <p>
+                    A clean web-based calculator built using
+                    HTML, CSS and JavaScript. This is the first
+                    project in my growing portfolio.
+                </p>
+
+            </div>
+
+
+            <button
+                class="primary-btn"
+                onclick="showPage('work')"
+            >
+                View Project
+            </button>
+
+        </div>
+
+
+        <!-- VISION -->
+
+        <div class="vision-section">
+
+            <div class="vision-number">
+                01
+            </div>
+
+            <div>
+
+                <span class="label">
+                    MY VISION
+                </span>
+
+                <h2>
+                    Learn. Build. Innovate.
+                </h2>
+
+                <p>
+                    My goal is to continuously develop my technical
+                    skills, build meaningful projects and eventually
+                    create technology that can make a real difference.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- FINAL CTA -->
+
+        <div class="home-cta">
+
+            <span class="label">
+                EXPLORE MY JOURNEY
+            </span>
+
+            <h2>
+                See what I've built
+                and achieved.
+            </h2>
+
+            <div class="hero-buttons">
+
+                <button
+                    class="primary-btn"
+                    onclick="showPage('work')"
+                >
+                    Explore My Work
+                </button>
+
+                <button
+                    class="secondary-btn"
+                    onclick="showPage('achievements')"
+                >
+                    My Achievements
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+```
+
+Then add this **CSS inside your existing `<style>` section**. You don't need to delete your existing CSS.
+
+```css
 /* =========================
-   RESET
+   PROFESSIONAL HOME
 ========================= */
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-
-body {
-
-    font-family:
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
-        Arial,
-        sans-serif;
-
-    background: #f7f9fc;
-
-    color: #172033;
-
-    min-height: 100vh;
-}
-
-
-/* =========================
-   HEADER
-========================= */
-
-header {
-
-    position: fixed;
-
-    top: 0;
-    left: 0;
-
+.home-container {
     width: 100%;
+    max-width: 1150px;
+    margin: auto;
+}
 
-    height: 72px;
 
-    background: rgba(255,255,255,0.96);
+/* HERO */
 
-    backdrop-filter: blur(12px);
+.hero {
+    max-width: 850px;
+    margin: 70px auto 110px;
+    text-align: center;
+}
 
+
+/* INTRO */
+
+.home-intro {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 60px;
+
+    padding: 55px 0;
+
+    border-top: 1px solid #e5e7eb;
     border-bottom: 1px solid #e5e7eb;
+}
+
+
+.label {
+    display: block;
+
+    color: #2563eb;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.8px;
+
+    margin-bottom: 12px;
+}
+
+
+.home-intro h2,
+.home-section h2,
+.vision-section h2,
+.home-cta h2 {
+
+    color: #111827;
+
+    font-size: 32px;
+
+    line-height: 1.2;
+}
+
+
+.home-intro p {
+
+    color: #667085;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+}
+
+
+/* INTERESTS */
+
+.home-section {
+
+    padding: 100px 0;
+}
+
+
+.home-heading {
+
+    margin-bottom: 35px;
+}
+
+
+.interest-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 16px;
+}
+
+
+.interest-card {
+
+    background: white;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 14px;
+
+    padding: 25px;
+
+    min-height: 220px;
+
+    transition: 0.3s;
+}
+
+
+.interest-card:hover {
+
+    transform: translateY(-5px);
+
+    border-color: #b8cdfa;
+
+    box-shadow:
+        0 15px 35px rgba(37,99,235,0.08);
+}
+
+
+.interest-number {
+
+    color: #b2bdd0;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    margin-bottom: 35px;
+}
+
+
+.interest-card h3 {
+
+    color: #111827;
+
+    font-size: 18px;
+
+    margin-bottom: 10px;
+}
+
+
+.interest-card p {
+
+    color: #667085;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+
+/* CURRENTLY BUILDING */
+
+.building-card {
+
+    background: #111827;
+
+    color: white;
+
+    border-radius: 18px;
+
+    padding: 45px;
 
     display: flex;
 
@@ -69,1665 +448,164 @@ header {
 
     justify-content: space-between;
 
-    padding: 0 7%;
+    gap: 35px;
 
-    z-index: 1000;
+    margin-bottom: 100px;
 }
 
 
-.logo {
+.building-card .label {
 
-    font-size: 24px;
-
-    font-weight: 700;
-
-    color: #111827;
-
-    cursor: pointer;
+    color: #8fb5ff;
 }
 
 
-.logo span {
+.building-card h2 {
 
-    color: #2563eb;
-}
-
-
-/* =========================
-   NAVIGATION
-========================= */
-
-nav {
-
-    display: flex;
-
-    gap: 8px;
-}
-
-
-nav button {
-
-    border: none;
-
-    background: transparent;
-
-    padding: 10px 15px;
-
-    border-radius: 8px;
-
-    color: #4b5563;
-
-    font-size: 14px;
-
-    cursor: pointer;
-
-    transition: 0.25s;
-}
-
-
-nav button:hover {
-
-    background: #eef4ff;
-
-    color: #2563eb;
-}
-
-
-nav button.active {
-
-    background: #2563eb;
-
-    color: white;
-}
-
-
-/* =========================
-   MAIN
-========================= */
-
-main {
-
-    padding-top: 72px;
-
-    min-height: calc(100vh - 72px);
-}
-
-
-.page {
-
-    display: none;
-
-    min-height: calc(100vh - 72px);
-
-    padding: 70px 8%;
-}
-
-
-.page.active {
-
-    display: block;
-}
-
-
-/* =========================
-   HOME
-========================= */
-
-#home {
-
-    align-items: center;
-
-    justify-content: center;
-
-    text-align: center;
-
-    background:
-
-        radial-gradient(
-            circle at 20% 20%,
-            #eaf2ff,
-            transparent 35%
-        ),
-
-        radial-gradient(
-            circle at 80% 80%,
-            #eef7ff,
-            transparent 35%
-        ),
-
-        #ffffff;
-}
-
-
-#home.active {
-
-    display: flex;
-}
-
-
-.hero {
-
-    max-width: 850px;
-}
-
-
-.small-title {
-
-    color: #2563eb;
-
-    font-size: 14px;
-
-    font-weight: 700;
-
-    letter-spacing: 1.5px;
-
-    margin-bottom: 18px;
-}
-
-
-.hero h1 {
-
-    font-size: clamp(44px, 7vw, 75px);
-
-    line-height: 1.05;
-
-    letter-spacing: -2px;
-
-    color: #111827;
-
-    margin-bottom: 22px;
-}
-
-
-.hero h1 span {
-
-    color: #2563eb;
-}
-
-
-.hero p {
-
-    max-width: 680px;
-
-    margin: auto;
-
-    color: #667085;
-
-    font-size: 18px;
-
-    line-height: 1.8;
-}
-
-
-/* =========================
-   HOME BUTTONS
-========================= */
-
-.hero-buttons {
-
-    margin-top: 35px;
-
-    display: flex;
-
-    justify-content: center;
-
-    gap: 12px;
-
-    flex-wrap: wrap;
-}
-
-
-.primary-btn {
-
-    border: none;
-
-    background: #2563eb;
-
-    color: white;
-
-    padding: 13px 23px;
-
-    border-radius: 9px;
-
-    font-weight: 600;
-
-    cursor: pointer;
-
-    transition: 0.25s;
-}
-
-
-.primary-btn:hover {
-
-    background: #1d4ed8;
-
-    transform: translateY(-2px);
-}
-
-
-.secondary-btn {
-
-    border: 1px solid #d9dee8;
-
-    background: white;
-
-    color: #344054;
-
-    padding: 13px 23px;
-
-    border-radius: 9px;
-
-    font-weight: 600;
-
-    cursor: pointer;
-
-    transition: 0.25s;
-}
-
-
-.secondary-btn:hover {
-
-    border-color: #2563eb;
-
-    color: #2563eb;
-}
-
-
-/* =========================
-   PAGE HEADER
-========================= */
-
-.page-header {
-
-    text-align: center;
-
-    max-width: 800px;
-
-    margin: 0 auto 45px;
-}
-
-
-.page-header h2 {
-
-    font-size: 40px;
-
-    color: #111827;
+    font-size: 30px;
 
     margin-bottom: 12px;
 }
 
 
-.page-header p {
+.building-card p {
 
-    color: #667085;
+    max-width: 650px;
+
+    color: #b8c1d1;
+
+    line-height: 1.7;
 }
 
 
-/* =========================
-   ABOUT
-========================= */
+/* VISION */
 
-.about-box {
+.vision-section {
 
-    max-width: 850px;
+    display: grid;
 
-    margin: auto;
+    grid-template-columns: 100px 1fr;
 
-    background: white;
+    gap: 35px;
 
-    border: 1px solid #e5e7eb;
-
-    border-radius: 16px;
-
-    padding: 35px;
-
-    box-shadow:
-        0 10px 30px rgba(16,24,40,0.05);
+    padding: 20px 0 100px;
 }
 
 
-.about-box p {
+.vision-number {
+
+    font-size: 55px;
+
+    font-weight: 700;
+
+    color: #dce5f5;
+}
+
+
+.vision-section h2 {
+
+    margin-bottom: 15px;
+}
+
+
+.vision-section p {
+
+    max-width: 720px;
 
     color: #667085;
 
     line-height: 1.8;
 
-    margin-bottom: 18px;
+    font-size: 16px;
 }
 
 
-.about-box p:last-child {
+/* CTA */
 
-    margin-bottom: 0;
-}
-
-
-/* =========================
-   MY WORK
-========================= */
-
-.work-grid {
-
-    max-width: 1000px;
-
-    margin: auto;
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(auto-fit, minmax(280px, 1fr));
-
-    gap: 25px;
-}
-
-
-.work-card {
-
-    background: white;
-
-    border: 1px solid #e5e7eb;
-
-    border-radius: 16px;
-
-    padding: 30px;
-
-    transition: 0.3s;
-
-    box-shadow:
-        0 10px 30px rgba(16,24,40,0.05);
-}
-
-
-.work-card:hover {
-
-    transform: translateY(-5px);
-
-    border-color: #b8cdfa;
-
-    box-shadow:
-        0 15px 35px rgba(37,99,235,0.10);
-}
-
-
-.work-icon {
-
-    width: 50px;
-
-    height: 50px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    background: #eef4ff;
-
-    border-radius: 12px;
-
-    font-size: 24px;
-
-    margin-bottom: 18px;
-}
-
-
-.work-card h3 {
-
-    color: #111827;
-
-    margin-bottom: 10px;
-}
-
-
-.work-card p {
-
-    color: #667085;
-
-    line-height: 1.7;
-
-    margin-bottom: 20px;
-}
-
-
-/* =========================
-   CALCULATOR
-========================= */
-
-.calculator {
-
-    max-width: 390px;
-
-    margin: auto;
-
-    background: white;
-
-    padding: 22px;
-
-    border-radius: 18px;
-
-    border: 1px solid #e5e7eb;
-
-    box-shadow:
-        0 15px 40px rgba(16,24,40,0.08);
-}
-
-
-#display {
-
-    width: 100%;
-
-    height: 70px;
-
-    border: 1px solid #e5e7eb;
-
-    background: #f8fafc;
-
-    border-radius: 10px;
-
-    margin-bottom: 15px;
-
-    padding: 12px;
-
-    text-align: right;
-
-    font-size: 27px;
-
-    color: #111827;
-
-    outline: none;
-}
-
-
-.calculator-buttons {
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(4, 1fr);
-
-    gap: 9px;
-}
-
-
-.calculator-buttons button {
-
-    height: 58px;
-
-    border: none;
-
-    border-radius: 10px;
-
-    background: #f1f4f8;
-
-    color: #1f2937;
-
-    font-size: 18px;
-
-    cursor: pointer;
-
-    transition: 0.2s;
-}
-
-
-.calculator-buttons button:hover {
-
-    background: #e5eaf1;
-}
-
-
-.operator {
-
-    color: #2563eb !important;
-
-    background: #eef4ff !important;
-}
-
-
-.equals {
-
-    background: #2563eb !important;
-
-    color: white !important;
-}
-
-
-.clear {
-
-    color: #dc2626 !important;
-
-    background: #fff1f2 !important;
-}
-
-
-/* =========================
-   ACHIEVEMENTS
-========================= */
-
-.achievements-grid {
-
-    max-width: 1100px;
-
-    margin: auto;
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(auto-fit, minmax(280px, 1fr));
-
-    gap: 24px;
-}
-
-
-.certificate-card {
-
-    background: white;
-
-    border: 1px solid #e5e7eb;
-
-    border-radius: 16px;
-
-    padding: 14px;
-
-    box-shadow:
-        0 10px 30px rgba(16,24,40,0.05);
-
-    transition: 0.3s;
-}
-
-
-.certificate-card:hover {
-
-    transform: translateY(-5px);
-
-    border-color: #b8cdfa;
-}
-
-
-.certificate-card img {
-
-    width: 100%;
-
-    height: 250px;
-
-    object-fit: contain;
-
-    background: #f8fafc;
-
-    border-radius: 10px;
-
-    cursor: pointer;
-}
-
-
-.certificate-info {
-
-    padding: 16px 5px 5px;
-}
-
-
-.certificate-info h3 {
-
-    font-size: 17px;
-
-    color: #111827;
-
-    margin-bottom: 5px;
-}
-
-
-.certificate-info p {
-
-    color: #667085;
-
-    font-size: 14px;
-}
-
-
-/* =========================
-   IMAGE POPUP
-========================= */
-
-.modal {
-
-    display: none;
-
-    position: fixed;
-
-    inset: 0;
-
-    background: rgba(15,23,42,0.88);
-
-    z-index: 3000;
-
-    align-items: center;
-
-    justify-content: center;
-
-    padding: 25px;
-}
-
-
-.modal.show {
-
-    display: flex;
-}
-
-
-.modal img {
-
-    max-width: 95%;
-
-    max-height: 90vh;
-
-    background: white;
-
-    border-radius: 8px;
-}
-
-
-.close-modal {
-
-    position: absolute;
-
-    top: 20px;
-
-    right: 30px;
-
-    font-size: 38px;
-
-    color: white;
-
-    cursor: pointer;
-}
-
-
-/* =========================
-   FOOTER
-========================= */
-
-footer {
+.home-cta {
 
     text-align: center;
 
-    padding: 22px;
+    padding: 90px 20px;
 
     border-top: 1px solid #e5e7eb;
-
-    color: #98a2b3;
-
-    background: white;
-
-    font-size: 14px;
 }
 
 
-/* =========================
-   MOBILE
-========================= */
+.home-cta h2 {
 
-@media (max-width: 700px) {
+    max-width: 600px;
 
-    header {
+    margin: auto;
+}
 
-        height: auto;
 
-        min-height: 70px;
+/* MOBILE */
 
-        padding: 12px 5%;
+@media (max-width: 850px) {
+
+    .interest-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .home-intro {
+
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .interest-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .building-card {
 
         flex-direction: column;
 
-        gap: 8px;
+        align-items: flex-start;
+
+        padding: 30px;
     }
 
 
-    nav {
+    .vision-section {
 
-        flex-wrap: wrap;
+        grid-template-columns: 1fr;
 
-        justify-content: center;
+        gap: 10px;
     }
 
 
-    nav button {
+    .vision-number {
 
-        padding: 8px 10px;
-
-        font-size: 13px;
+        font-size: 40px;
     }
 
 
-    main {
+    .home-section {
 
-        padding-top: 110px;
+        padding: 70px 0;
     }
 
 
-    .page {
+    .hero {
 
-        min-height:
-            calc(100vh - 110px);
+        margin-top: 40px;
 
-        padding: 55px 5%;
+        margin-bottom: 70px;
     }
 
 }
-
-</style>
-
-</head>
-
-
-<body>
-
-
-<!-- =========================
-     HEADER
-========================= -->
-
-<header>
-
-
-<div
-class="logo"
-onclick="showPage('home')"
->
-
-Manoj<span>.</span>
-
-</div>
-
-
-<nav>
-
-
-<button
-id="nav-home"
-onclick="showPage('home')"
->
-
-Home
-
-</button>
-
-
-<button
-id="nav-about"
-onclick="showPage('about')"
->
-
-About
-
-</button>
-
-
-<button
-id="nav-achievements"
-onclick="showPage('achievements')"
->
-
-Achievements
-
-</button>
-
-
-</nav>
-
-</header>
-
-
-
-<main>
-
-
-<!-- =========================
-     HOME
-========================= -->
-
-<section
-id="home"
-class="page active"
->
-
-
-<div class="hero">
-
-
-<div class="small-title">
-
-STUDENT • DESIGNER • INNOVATOR
-
-</div>
-
-
-<h1>
-
-Building ideas into
-<span>technology.</span>
-
-</h1>
-
-
-<p>
-
-I'm Manoj, a student interested in
-Computer Science, Artificial Intelligence,
-programming, electronics and innovation.
-
-</p>
-
-
-<div class="hero-buttons">
-
-
-<button
-class="primary-btn"
-onclick="showPage('work')"
->
-
-Explore My Work
-
-</button>
-
-
-<button
-class="secondary-btn"
-onclick="showPage('achievements')"
->
-
-View Achievements
-
-</button>
-
-
-</div>
-
-
-</div>
-
-</section>
-
-
-
-<!-- =========================
-     ABOUT
-========================= -->
-
-<section
-id="about"
-class="page"
->
-
-
-<div class="page-header">
-
-<h2>
-
-About Me
-
-</h2>
-
-
-<p>
-
-A little about my interests and journey.
-
-</p>
-
-</div>
-
-
-<div class="about-box">
-
-
-<p>
-
-I am a student passionate about technology,
-programming, electronics, artificial intelligence
-and creative design.
-
-</p>
-
-
-<p>
-
-I enjoy creating practical projects using
-Arduino, sensors, motors, programming and
-web technologies.
-
-</p>
-
-
-<p>
-
-I am particularly interested in Computer Science,
-AI/ML, embedded systems and building solutions
-that can solve real-world problems.
-
-</p>
-
-
-</div>
-
-</section>
-
-
-
-<!-- =========================
-     MY WORK
-========================= -->
-
-<section
-id="work"
-class="page"
->
-
-
-<div class="page-header">
-
-<h2>
-
-My Work
-
-</h2>
-
-
-<p>
-
-Projects I have built and experiments I am working on.
-
-</p>
-
-</div>
-
-
-<div class="work-grid">
-
-
-<!-- CALCULATOR -->
-
-<div class="work-card">
-
-
-<div class="work-icon">
-
-🧮
-
-</div>
-
-
-<h3>
-
-Interactive Calculator
-
-</h3>
-
-
-<p>
-
-A clean and responsive calculator built using
-HTML, CSS and JavaScript.
-
-</p>
-
-
-<button
-class="primary-btn"
-onclick="showPage('calculator')"
->
-
-Open Calculator
-
-</button>
-
-
-</div>
-
-
-<!-- FUTURE WORK -->
-
-<div class="work-card">
-
-
-<div class="work-icon">
-
-＋
-
-</div>
-
-
-<h3>
-
-More Coming Soon
-
-</h3>
-
-
-<p>
-
-More of my projects and innovations will be
-added here as I build them.
-
-</p>
-
-
-</div>
-
-
-</div>
-
-</section>
-
-
-
-<!-- =========================
-     CALCULATOR
-========================= -->
-
-<section
-id="calculator"
-class="page"
->
-
-
-<div class="page-header">
-
-<h2>
-
-Calculator
-
-</h2>
-
-
-<p>
-
-An interactive project from my portfolio.
-
-</p>
-
-</div>
-
-
-<div class="calculator">
-
-
-<input
-id="display"
-type="text"
-readonly
->
-
-
-<div class="calculator-buttons">
-
-
-<button
-class="clear"
-onclick="clearDisplay()"
->
-
-C
-
-</button>
-
-
-<button
-onclick="deleteLast()"
->
-
-⌫
-
-</button>
-
-
-<button
-onclick="appendValue('%')"
->
-
-%
-
-</button>
-
-
-<button
-class="operator"
-onclick="appendValue('/')"
->
-
-÷
-
-</button>
-
-
-<button
-onclick="appendValue('7')"
->
-
-7
-
-</button>
-
-
-<button
-onclick="appendValue('8')"
->
-
-8
-
-</button>
-
-
-<button
-onclick="appendValue('9')"
->
-
-9
-
-</button>
-
-
-<button
-class="operator"
-onclick="appendValue('*')"
->
-
-×
-
-</button>
-
-
-<button
-onclick="appendValue('4')"
->
-
-4
-
-</button>
-
-
-<button
-onclick="appendValue('5')"
->
-
-5
-
-</button>
-
-
-<button
-onclick="appendValue('6')"
->
-
-6
-
-</button>
-
-
-<button
-class="operator"
-onclick="appendValue('-')"
->
-
-−
-
-</button>
-
-
-<button
-onclick="appendValue('1')"
->
-
-1
-
-</button>
-
-
-<button
-onclick="appendValue('2')"
->
-
-2
-
-</button>
-
-
-<button
-onclick="appendValue('3')"
->
-
-3
-
-</button>
-
-
-<button
-class="operator"
-onclick="appendValue('+')"
->
-
-+
-
-</button>
-
-
-<button
-onclick="appendValue('0')"
->
-
-0
-
-</button>
-
-
-<button
-onclick="appendValue('.')"
->
-
-.
-
-</button>
-
-
-<button
-class="equals"
-onclick="calculate()"
->
-
-=
-
-</button>
-
-
-<button
-class="operator"
-onclick="appendValue('**')"
->
-
-^
-
-</button>
-
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<!-- =========================
-     ACHIEVEMENTS
-========================= -->
-
-<section
-id="achievements"
-class="page"
->
-
-
-<div class="page-header">
-
-<h2>
-
-Achievements
-
-</h2>
-
-
-<p>
-
-Certificates and participation.
-
-</p>
-
-</div>
-
-
-<div class="achievements-grid">
-
-
-<!-- CERTIFICATE 1 -->
-
-<div class="certificate-card">
-
-
-<img
-src="certificate.jpg"
-alt="MyGov Quiz Certificate 1"
-onclick="openCertificate(this.src)"
->
-
-
-<div class="certificate-info">
-
-<h3>
-
-MyGov Quiz
-
-</h3>
-
-
-<p>
-
-Certificate 1
-
-</p>
-
-</div>
-
-</div>
-
-
-
-<!-- CERTIFICATE 2 -->
-
-<div class="certificate-card">
-
-
-<img
-src="certificate%20(1).jpg"
-alt="MyGov Quiz Certificate 2"
-onclick="openCertificate(this.src)"
->
-
-
-<div class="certificate-info">
-
-<h3>
-
-MyGov Quiz
-
-</h3>
-
-
-<p>
-
-Certificate 2
-
-</p>
-
-</div>
-
-</div>
-
-
-
-<!-- CERTIFICATE 3 -->
-
-<div class="certificate-card">
-
-
-<img
-src="certificate%20(2).jpg"
-alt="MyGov Quiz Certificate 3"
-onclick="openCertificate(this.src)"
->
-
-
-<div class="certificate-info">
-
-<h3>
-
-MyGov Quiz
-
-</h3>
-
-
-<p>
-
-Certificate 3
-
-</p>
-
-</div>
-
-</div>
-
-
-</div>
-
-</section>
-
-
-</main>
-
-
-
-<!-- =========================
-     CERTIFICATE POPUP
-========================= -->
-
-<div
-class="modal"
-id="certificateModal"
->
-
-
-<span
-class="close-modal"
-onclick="closeCertificate()"
->
-
-&times;
-
-</span>
-
-
-<img
-id="largeCertificate"
-src=""
-alt="Certificate"
->
-
-</div>
-
-
-
-<footer>
-
-© 2026 Manoj. Built with HTML, CSS & JavaScript.
-
-</footer>
-
-
-
-<script>
-
-
-/* =========================
-   PAGE SWITCHING
-========================= */
-
-function showPage(pageName) {
-
-
-const pages =
-document.querySelectorAll(".page");
-
-
-pages.forEach(function(page) {
-
-page.classList.remove("active");
-
-});
-
-
-const selectedPage =
-document.getElementById(pageName);
-
-
-if (selectedPage) {
-
-selectedPage.classList.add("active");
-
-}
-
-
-/* NAV ACTIVE STATE */
-
-const navButtons =
-document.querySelectorAll("nav button");
-
-
-navButtons.forEach(function(button) {
-
-button.classList.remove("active");
-
-});
-
-
-const activeButton =
-document.getElementById(
-"nav-" + pageName
-);
-
-
-if (activeButton) {
-
-activeButton.classList.add("active");
-
-}
-
-
-/* Scroll to top */
-
-window.scrollTo({
-
-top: 0,
-
-behavior: "smooth"
-
-});
-
-}
-
-
-/* =========================
-   CALCULATOR
-========================= */
-
-const display =
-document.getElementById("display");
-
-
-function appendValue(value) {
-
-display.value += value;
-
-}
-
-
-function clearDisplay() {
-
-display.value = "";
-
-}
-
-
-function deleteLast() {
-
-display.value =
-display.value.slice(0, -1);
-
-}
-
-
-function calculate() {
-
-try {
-
-
-if (display.value.trim() === "") {
-
-return;
-
-}
-
-
-display.value =
-eval(display.value);
-
-
-}
-
-catch {
-
-display.value = "Error";
-
-}
-
-}
-
-
-/* =========================
-   CERTIFICATE VIEWER
-========================= */
-
-function openCertificate(image) {
-
-
-const modal =
-document.getElementById(
-"certificateModal"
-);
-
-
-const largeImage =
-document.getElementById(
-"largeCertificate"
-);
-
-
-largeImage.src = image;
-
-
-modal.classList.add("show");
-
-}
-
-
-function closeCertificate() {
-
-
-document
-.getElementById(
-"certificateModal"
-)
-.classList.remove("show");
-
-}
-
-
-/* Close popup */
-
-document
-.getElementById("certificateModal")
-.addEventListener(
-"click",
-function(event) {
-
-
-if (event.target === this) {
-
-closeCertificate();
-
-}
-
-});
-
-
-/* =========================
-   START
-========================= */
-
-showPage("home");
-
-
-</script>
-
-
-</body>
-
-</html>
 ```
+
+After adding this, your **Home page will be much longer and intentionally scrollable**, while **About, My Work, Calculator and Achievements remain separate hidden pages**. No images are added to Home.
