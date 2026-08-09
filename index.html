@@ -3,9 +3,7 @@
 <html lang="en">
 
 <head>
-
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Manoj | Portfolio</title>
@@ -13,7 +11,7 @@
 <style>
 
 /* =========================
-   BASIC
+   RESET
 ========================= */
 
 * {
@@ -41,11 +39,11 @@ header {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
 
+    width: 100%;
     height: 72px;
 
-    background: rgba(255,255,255,0.96);
+    background: rgba(255,255,255,0.97);
 
     border-bottom: 1px solid #e5e7eb;
 
@@ -68,11 +66,6 @@ header {
 .logo span {
     color: #2563eb;
 }
-
-
-/* =========================
-   NAVIGATION
-========================= */
 
 nav {
     display: flex;
@@ -108,7 +101,7 @@ nav button.active {
 
 
 /* =========================
-   PAGES
+   PAGE SYSTEM
 ========================= */
 
 main {
@@ -218,6 +211,7 @@ main {
 }
 
 .hero h1 span {
+    display: block;
     color: #2563eb;
 }
 
@@ -259,29 +253,23 @@ main {
 
 .primary-btn {
     border: none;
-
     background: #2563eb;
-
     color: white;
 }
 
 .primary-btn:hover {
     background: #1d4ed8;
-
     transform: translateY(-2px);
 }
 
 .secondary-btn {
     border: 1px solid #d8dee9;
-
     background: white;
-
     color: #344054;
 }
 
 .secondary-btn:hover {
     border-color: #2563eb;
-
     color: #2563eb;
 }
 
@@ -386,15 +374,12 @@ main {
 
 .section-header {
     text-align: center;
-
     margin-bottom: 45px;
 }
 
 .section-header h2 {
     color: #111827;
-
     font-size: 40px;
-
     margin-bottom: 12px;
 }
 
@@ -470,7 +455,6 @@ main {
 
 .work-card:hover {
     transform: translateY(-5px);
-
     border-color: #b9cdf5;
 }
 
@@ -493,15 +477,12 @@ main {
 
 .work-card h3 {
     color: #111827;
-
     margin-bottom: 10px;
 }
 
 .work-card p {
     color: #667085;
-
     line-height: 1.7;
-
     margin-bottom: 20px;
 }
 
@@ -588,19 +569,16 @@ main {
 
 .operator {
     color: #2563eb !important;
-
     background: #eef4ff !important;
 }
 
 .equals {
     background: #2563eb !important;
-
     color: white !important;
 }
 
 .clear {
     color: #dc2626 !important;
-
     background: #fff1f2 !important;
 }
 
@@ -648,6 +626,8 @@ main {
 }
 
 .certificate-card img {
+    display: block;
+
     width: 100%;
 
     height: 270px;
@@ -681,7 +661,7 @@ main {
 
 
 /* =========================
-   CERTIFICATE POPUP
+   CERTIFICATE VIEWER
 ========================= */
 
 .modal {
@@ -691,7 +671,7 @@ main {
 
     inset: 0;
 
-    background: rgba(15,23,42,0.88);
+    background: rgba(15,23,42,0.90);
 
     z-index: 3000;
 
@@ -708,7 +688,6 @@ main {
 
 .modal img {
     max-width: 95%;
-
     max-height: 90vh;
 
     background: white;
@@ -720,7 +699,6 @@ main {
     position: absolute;
 
     top: 20px;
-
     right: 30px;
 
     font-size: 38px;
@@ -786,7 +764,6 @@ footer {
 
     nav {
         flex-wrap: wrap;
-
         justify-content: center;
     }
 
@@ -821,11 +798,6 @@ footer {
 
 }
 
-
-/* =========================
-   END CSS
-========================= */
-
 </style>
 
 </head>
@@ -857,14 +829,12 @@ footer {
             Home
         </button>
 
-
         <button
             id="nav-about"
             onclick="showPage('about')"
         >
             About
         </button>
-
 
         <button
             id="nav-achievements"
@@ -901,12 +871,10 @@ footer {
                     STUDENT • DESIGNER • INNOVATOR
                 </div>
 
-
                 <h1>
                     Building ideas into
                     <span>technology.</span>
                 </h1>
-
 
                 <p>
                     I'm Manoj, a student interested in
@@ -924,7 +892,6 @@ footer {
                         Explore My Work
                     </button>
 
-
                     <button
                         class="secondary-btn"
                         onclick="showPage('achievements')"
@@ -938,8 +905,6 @@ footer {
 
         </div>
 
-
-        <!-- VISUAL CARDS -->
 
         <div class="home-cards">
 
@@ -1093,8 +1058,6 @@ footer {
     <div class="work-grid">
 
 
-        <!-- ONLY PROJECT FOR NOW -->
-
         <div class="work-card">
 
             <div class="work-icon">
@@ -1150,7 +1113,6 @@ footer {
 
     <div class="calculator">
 
-
         <input
             id="display"
             type="text"
@@ -1160,7 +1122,6 @@ footer {
 
         <div class="calculator-buttons">
 
-
             <button
                 class="clear"
                 onclick="clearDisplay()"
@@ -1168,20 +1129,13 @@ footer {
                 C
             </button>
 
-
-            <button
-                onclick="deleteLast()"
-            >
+            <button onclick="deleteLast()">
                 ⌫
             </button>
 
-
-            <button
-                onclick="appendValue('%')"
-            >
+            <button onclick="appendValue('%')">
                 %
             </button>
-
 
             <button
                 class="operator"
@@ -1191,26 +1145,17 @@ footer {
             </button>
 
 
-            <button
-                onclick="appendValue('7')"
-            >
+            <button onclick="appendValue('7')">
                 7
             </button>
 
-
-            <button
-                onclick="appendValue('8')"
-            >
+            <button onclick="appendValue('8')">
                 8
             </button>
 
-
-            <button
-                onclick="appendValue('9')"
-            >
+            <button onclick="appendValue('9')">
                 9
             </button>
-
 
             <button
                 class="operator"
@@ -1220,26 +1165,17 @@ footer {
             </button>
 
 
-            <button
-                onclick="appendValue('4')"
-            >
+            <button onclick="appendValue('4')">
                 4
             </button>
 
-
-            <button
-                onclick="appendValue('5')"
-            >
+            <button onclick="appendValue('5')">
                 5
             </button>
 
-
-            <button
-                onclick="appendValue('6')"
-            >
+            <button onclick="appendValue('6')">
                 6
             </button>
-
 
             <button
                 class="operator"
@@ -1249,26 +1185,17 @@ footer {
             </button>
 
 
-            <button
-                onclick="appendValue('1')"
-            >
+            <button onclick="appendValue('1')">
                 1
             </button>
 
-
-            <button
-                onclick="appendValue('2')"
-            >
+            <button onclick="appendValue('2')">
                 2
             </button>
 
-
-            <button
-                onclick="appendValue('3')"
-            >
+            <button onclick="appendValue('3')">
                 3
             </button>
-
 
             <button
                 class="operator"
@@ -1278,19 +1205,13 @@ footer {
             </button>
 
 
-            <button
-                onclick="appendValue('0')"
-            >
+            <button onclick="appendValue('0')">
                 0
             </button>
 
-
-            <button
-                onclick="appendValue('.')"
-            >
+            <button onclick="appendValue('.')">
                 .
             </button>
-
 
             <button
                 class="equals"
@@ -1299,14 +1220,12 @@ footer {
                 =
             </button>
 
-
             <button
                 class="operator"
                 onclick="appendValue('**')"
             >
                 ^
             </button>
-
 
         </div>
 
@@ -1346,7 +1265,7 @@ footer {
         <div class="certificate-card">
 
             <img
-                src="images/certificate.jpg"
+                src="certificate.jpg"
                 alt="MyGov Quiz Certificate 1"
                 onclick="openCertificate(this.src)"
             >
@@ -1371,7 +1290,7 @@ footer {
         <div class="certificate-card">
 
             <img
-                src="images/certificate%20(1).jpg"
+                src="certificate%20(1).jpg"
                 alt="MyGov Quiz Certificate 2"
                 onclick="openCertificate(this.src)"
             >
@@ -1396,7 +1315,7 @@ footer {
         <div class="certificate-card">
 
             <img
-                src="images/certificate%20(2).jpg"
+                src="certificate%20(2).jpg"
                 alt="MyGov Quiz Certificate 3"
                 onclick="openCertificate(this.src)"
             >
@@ -1466,7 +1385,6 @@ footer {
 
 <script>
 
-
 /* =========================
    PAGE SWITCHING
 ========================= */
@@ -1494,8 +1412,6 @@ function showPage(pageName) {
 
     }
 
-
-    /* NAVIGATION */
 
     const navButtons =
         document.querySelectorAll("nav button");
@@ -1582,7 +1498,7 @@ function calculate() {
 
 
 /* =========================
-   CERTIFICATE POPUP
+   CERTIFICATE VIEWER
 ========================= */
 
 function openCertificate(image) {
@@ -1590,7 +1506,6 @@ function openCertificate(image) {
     document
         .getElementById("largeCertificate")
         .src = image;
-
 
     document
         .getElementById("certificateModal")
@@ -1625,7 +1540,7 @@ document
 
 
 /* =========================
-   START ON HOME
+   START HOME
 ========================= */
 
 showPage("home");
@@ -1634,6 +1549,5 @@ showPage("home");
 
 
 </body>
-
 </html>
 ```
