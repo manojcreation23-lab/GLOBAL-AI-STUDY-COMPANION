@@ -1,159 +1,118 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manoj | Computer Science & AI Portfolio</title>
-    <!-- Tailwind CSS Engine -->
-    <script src="https://tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brandBg: '#f8fafc',
-                        brandText: '#0f172a',
-                        brandAccent: '#2563eb',
-                        brandMuted: '#475569'
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        html { scroll-behavior: smooth; }
-        .fade-in-section { opacity: 0; transform: translateY(40px); transition: all 0.8s ease-out; }
-        .fade-in-section.is-visible { opacity: 1; transform: translateY(0); }
-    </style>
-</head>
-<body class="bg-brandBg text-brandText font-sans antialiased min-h-screen">
+```html
+<!-- =========================
+     HOME
+========================= -->
 
-    <!-- 1. NAVIGATION BAR -->
-    <nav class="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-md border-b border-slate-200 z-50 px-6 py-4">
-        <div class="max-w-6xl mx-auto flex justify-between items-center">
-            <span class="font-mono text-xl font-bold tracking-tight text-brandAccent">manoj.dev</span>
-            <!-- Top Right Main Navigation Links -->
-            <div class="space-x-8 font-medium text-sm text-brandMuted">
-                <a href="#home" class="hover:text-brandAccent transition-colors">Home</a>
-                <a href="#about" class="hover:text-brandAccent transition-colors">About</a>
-                <a href="#my-work" class="hover:text-brandAccent transition-colors">My Work</a>
-                <a href="#achievements" class="hover:text-brandAccent transition-colors">Achievements</a>
-            </div>
+<section id="home" class="page active">
+
+    <div class="hero">
+
+        <div class="small-title">
+            STUDENT • DESIGNER • INNOVATOR
         </div>
-    </nav>
 
-    <!-- 2. HOME SECTION (No Images, Clean Typography) -->
-    <section id="home" class="min-h-screen flex flex-col justify-center items-center px-6 pt-20 text-center bg-gradient-to-b from-white to-brandBg">
-        <div class="max-w-3xl space-y-6">
-            <span class="inline-block bg-blue-50 text-brandAccent text-xs font-mono uppercase tracking-widest px-3 py-1 rounded-full border border-blue-200">
-                Aspiring Undergraduate Candidate
+        <h1>
+            Building ideas into
+            <span>technology.</span>
+        </h1>
+
+        <p>
+            I'm Manoj, a student exploring Computer Science,
+            Artificial Intelligence, programming, electronics
+            and innovation.
+        </p>
+
+        <div class="hero-buttons">
+
+            <button
+                class="primary-btn"
+                onclick="showPage('work')"
+            >
+                Explore My Work
+            </button>
+
+            <button
+                class="secondary-btn"
+                onclick="showPage('achievements')"
+            >
+                View Achievements
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- SIMPLE SCROLL CONTENT -->
+
+    <div class="home-content">
+
+        <div class="home-block">
+
+            <span class="home-label">
+                ABOUT MY JOURNEY
             </span>
-            <h1 class="text-5xl md:text-6xl font-extrabold tracking-tight leading-tight">
-                Engineering the Future with <span class="text-brandAccent">AI & Computer Science</span>
-            </h1>
-            <p class="text-lg text-brandMuted max-w-xl mx-auto font-normal leading-relaxed">
-                Building useful software applications while mastering core mathematical and deep learning frameworks.
+
+            <h2>
+                Learning by building.
+            </h2>
+
+            <p>
+                I enjoy learning technology by creating things,
+                experimenting with ideas and turning what I learn
+                into practical projects.
             </p>
-            <div class="pt-4">
-                <!-- Anchor Link: Explore My Work -->
-                <a href="#my-work" class="inline-flex items-center gap-2 bg-brandAccent text-white font-semibold px-6 py-3 rounded-xl hover:bg-blue-700 transition-all transform active:scale-95 shadow-lg shadow-blue-500/20">
-                    Explore My Work <span class="text-xl">→</span>
-                </a>
-            </div>
+
         </div>
-    </section>
 
-    <!-- 3. ABOUT SECTION -->
-    <section id="about" class="py-24 px-6 bg-white border-y border-slate-200">
-        <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
-            <div class="md:col-span-1">
-                <h2 class="text-3xl font-black tracking-tight border-b-4 border-brandAccent inline-block pb-1">About Me</h2>
+
+        <div class="home-block">
+
+            <span class="home-label">
+                MY INTERESTS
+            </span>
+
+            <div class="interest-row">
+
+                <div>
+                    <strong>01</strong>
+                    <span>Computer Science</span>
+                </div>
+
+                <div>
+                    <strong>02</strong>
+                    <span>Artificial Intelligence</span>
+                </div>
+
+                <div>
+                    <strong>03</strong>
+                    <span>Electronics</span>
+                </div>
+
+                <div>
+                    <strong>04</strong>
+                    <span>Innovation</span>
+                </div>
+
             </div>
-            <div class="md:col-span-2 text-brandMuted space-y-4 text-base leading-relaxed">
-                <p>
-                    I am a dedicated student preparing for rigorous undergraduate studies in Computer Science and Artificial Intelligence. My academic objective centers on building a solid structural baseline in algorithm design, applied statistics, and automation architectures.
-                </p>
-                <p>
-                    Rather than relying on basic classroom templates, my work emphasizes deploying operational utilities that solve practical workflow and metrics challenges. My long-term roadmap aligns with the innovative deep-tech modules offered across premier European engineering faculties.
-                </p>
-            </div>
+
         </div>
-    </section>
 
-    <!-- VISUALLY INTERESTING SCROLL TIMELINE (Dynamic Interactive Section instead of text blocks) -->
-    <section class="py-24 px-6 bg-brandBg">
-        <div class="max-w-3xl mx-auto">
-            <div class="text-center mb-16">
-                <p class="text-xs font-mono uppercase tracking-widest text-brandAccent font-bold">Dev Timeline</p>
-                <h3 class="text-2xl font-bold mt-1">My Technical Growth Progress</h3>
-            </div>
-            
-            <!-- Core Interactive Vertical Timeline Track -->
-            <div class="relative border-l-2 border-slate-300 ml-4 md:ml-32 space-y-16">
-                
-                <!-- Timeline Node 1 -->
-                <div class="relative pl-8 fade-in-section">
-                    <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-brandAccent ring-4 ring-blue-100"></span>
-                    <span class="absolute left-[-110px] top-1 hidden md:block text-xs font-mono text-brandMuted font-bold">STAGE 01</span>
-                    <h4 class="text-lg font-bold">Core Software Syntax & Logic</h4>
-                    <p class="text-sm text-brandMuted mt-1">Mastering control loops, functional paradigms, and algorithm structures natively without library frameworks.</p>
-                </div>
 
-                <!-- Timeline Node 2 -->
-                <div class="relative pl-8 fade-in-section">
-                    <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-brandAccent ring-4 ring-blue-100"></span>
-                    <span class="absolute left-[-110px] top-1 hidden md:block text-xs font-mono text-brandMuted font-bold">STAGE 02</span>
-                    <h4 class="text-lg font-bold">Interactive DOM Web Pipelines</h4>
-                    <p class="text-sm text-brandMuted mt-1">Integrating dynamic browser states, operational UI styling engines, and cloud hosting architecture.</p>
-                </div>
+        <div class="home-bottom">
 
-                <!-- Timeline Node 3 -->
-                <div class="relative pl-8 fade-in-section">
-                    <span class="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-brandAccent ring-4 ring-blue-100"></span>
-                    <span class="absolute left-[-110px] top-1 hidden md:block text-xs font-mono text-brandMuted font-bold">STAGE 03</span>
-                    <h4 class="text-lg font-bold">Mathematical ML Integrations</h4>
-                    <p class="text-sm text-brandMuted mt-1">Transitioning system modules into deep learning implementations and computer vision endpoints.</p>
-                </div>
+            <span>
+                LEARN • BUILD • EXPLORE
+            </span>
 
-            </div>
+            <h2>
+                More ideas are on the way.
+            </h2>
+
         </div>
-    </section>
 
-    <!-- 4. MY WORK SECTION (Hosting the Dedicated Calculator Application) -->
-    <section id="my-work" class="py-24 px-6 bg-white border-t border-slate-200">
-        <div class="max-w-4xl mx-auto">
-            <div class="mb-12">
-                <span class="text-xs font-mono text-brandAccent uppercase font-bold tracking-wider">Project Portfolio</span>
-                <h2 class="text-3xl font-extrabold mt-1">My Work</h2>
-            </div>
+    </div>
 
-            <!-- Embedded Smart University Admission Calculator (Fully Self-Contained) -->
-            <div class="bg-brandBg border border-slate-200 rounded-2xl p-6 md:p-8 shadow-sm">
-                <div class="flex items-center gap-3 mb-6">
-                    <div class="bg-blue-100 text-brandAccent p-2.5 rounded-xl text-xl">🧮</div>
-                    <div>
-                        <h3 class="text-xl font-bold">University Grade & Eligibility Calculator</h3>
-                        <p class="text-xs text-brandMuted">An operational metric tool for processing global application data metrics.</p>
-                    </div>
-                </div>
+</section>
+```
 
-                <!-- Interactive App Tab Grid -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4 border-t border-slate-200">
-                    <!-- Column 1: Input Fields Container -->
-                    <div class="space-y-4">
-                        <label class="block text-xs font-mono font-bold uppercase tracking-wider text-brandMuted">Calculate Target ECTS Score</label>
-                        <div>
-                            <span class="block text-xs font-medium text-slate-500 mb-1">Subject Academic Grade (out of 30)</span>
-                            <input id="gradeInput" type="number" min="1" max="30" placeholder="e.g., 28" class="w-full bg-white text-brandText border border-slate-300 rounded-xl p-3 text-sm focus:outline-none focus:border-brandAccent focus:ring-1 focus:ring-brandAccent">
-                        </div>
-                        <div>
-                            <span class="block text-xs font-medium text-slate-500 mb-1">Module Credit Worth (ECTS)</span>
-                            <input id="creditInput" type="number" min="1" placeholder="e.g., 6" class="w-full bg-white text-brandText border border-slate-300 rounded-xl p-3 text-sm focus:outline-none focus:border-brandAccent focus:ring-1 focus:ring-brandAccent">
-                        </div>
-                        <button onclick="calculateMetrics()" class="w-full bg-brandText text-white font-bold py-3 px-4 rounded-xl hover:bg-slate-800 transition-all text-sm tracking-wide">
-                            Execute Calculations
-                        </button>
-                    </div>
-
-                    <!-- Column 2: Live Processing Result Box Container -->
-                    <div class="bg-white border border-slate-200 rounded-xl p-5 flex flex-col justify-center items-center text-center">
